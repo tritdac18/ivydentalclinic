@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Staff Sales &amp; Appointment Reports - Ivy Dental Clinic</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#136dec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101822",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white">
+<div class="flex h-screen w-full overflow-hidden">
+<aside class="flex w-64 flex-col border-r border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900">
+<div class="flex h-16 items-center px-6">
+<span class="material-symbols-outlined text-primary mr-2">dentistry</span>
+<h1 class="text-lg font-bold tracking-tight text-slate-900 dark:text-white">Ivy Dental Clinic</h1>
+</div>
+<div class="px-6 py-2">
+<p class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Admin Panel</p>
+</div>
+<nav class="flex flex-1 flex-col space-y-1 px-3 py-2">
+<a class="group flex items-center rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-primary dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-primary-400" href="#">
+<span class="material-symbols-outlined mr-3 text-slate-400 group-hover:text-primary dark:text-slate-500">dashboard</span>
+                Dashboard
+            </a>
+<a class="group flex items-center rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-primary dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-primary-400" href="#">
+<span class="material-symbols-outlined mr-3 text-slate-400 group-hover:text-primary dark:text-slate-500">calendar_today</span>
+                Schedule
+            </a>
+<a class="group flex items-center rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-primary dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-primary-400" href="#">
+<span class="material-symbols-outlined mr-3 text-slate-400 group-hover:text-primary dark:text-slate-500">group</span>
+                Patients
+            </a>
+<a class="group flex items-center rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-primary dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-primary-400" href="#">
+<span class="material-symbols-outlined mr-3 text-slate-400 group-hover:text-primary dark:text-slate-500">medical_services</span>
+                Services
+            </a>
+<a class="group flex items-center rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-primary dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-primary-400" href="#">
+<span class="material-symbols-outlined mr-3 text-slate-400 group-hover:text-primary dark:text-slate-500">payments</span>
+                Finances
+            </a>
+<a class="group flex items-center rounded-lg bg-primary/10 px-3 py-2.5 text-sm font-medium text-primary dark:bg-primary/20 dark:text-primary-400" href="#">
+<span class="material-symbols-outlined fill-1 mr-3 text-primary">description</span>
+                Reports
+            </a>
+</nav>
+<div class="border-t border-slate-200 p-4 dark:border-slate-800">
+<a class="group flex w-full items-center justify-center rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50 hover:text-primary dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-primary-400" href="#">
+<span class="material-symbols-outlined mr-2 text-slate-400 group-hover:text-primary dark:text-slate-500">logout</span>
+            Log Out
+        </a>
+</div>
+</aside>
+<main class="flex-1 overflow-y-auto bg-background-light dark:bg-background-dark">
+<div class="container mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+<div class="mb-8 flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
+<div>
+<h1 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Staff Sales &amp; Performance Reports</h1>
+<p class="mt-1 text-slate-500 dark:text-slate-400">Overview of clinic revenue and appointment metrics.</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden items-center gap-3 sm:flex">
+<div class="text-right">
+<p class="text-sm font-medium text-slate-700 dark:text-slate-200">Dr. Sarah Smith</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Admin</p>
+</div>
+<div class="h-10 w-10 rounded-full bg-slate-200 overflow-hidden" data-alt="Admin user profile picture">
+<img alt="Admin Profile" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-wEoiwlcwCp-o9ruhTdQi5TVmTqkwOPaK5CL-sMx-XXbQ21iOnbq8MRzaV4-13S7UDU2PbO3sCUvlqzgMmQcIVGHNsct70iBkp3IYAAqhZ2gtFrbVyD9oHmh0RHb_WkTA3kd4DxeqoQbl1fbqwt66pWzoTywlPMqeEtA2jNnCm4L3H6swHGb0pjpeyjyzIzx-0MoxzRDBSDKP3fj5TTAjcoguOhrwI6n9Lb3JKtrUViS7PPkXohyHutV25zPPfUX7U-2MBk1FJ53Y"/>
+</div>
+</div>
+</div>
+</div>
+<div class="mb-8 flex flex-col justify-between gap-4 sm:flex-row sm:items-center bg-white p-4 rounded-xl border border-slate-200 dark:bg-slate-900 dark:border-slate-800">
+<div class="flex items-center gap-3 w-full sm:w-auto">
+<div class="relative w-full sm:w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">calendar_today</span>
+<select class="h-10 w-full cursor-pointer rounded-lg border-slate-300 bg-white pl-10 pr-8 text-sm font-medium text-slate-700 hover:border-slate-400 focus:border-primary focus:ring-primary dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200">
+<option>This Month</option>
+<option>Last 30 Days</option>
+<option>Last Quarter</option>
+<option>This Year</option>
+</select>
+</div>
+</div>
+<button class="flex h-10 w-full sm:w-auto justify-center items-center gap-2 rounded-lg bg-primary px-4 text-sm font-medium text-white transition-colors hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+<span class="material-symbols-outlined text-[20px]">download</span>
+                        Export
+                    </button>
+</div>
+<div class="mb-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+<div class="relative overflow-hidden rounded-xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+<div class="flex items-center justify-between">
+<div>
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400">Total Revenue</p>
+<p class="mt-2 text-3xl font-bold text-slate-900 dark:text-white">$45,200</p>
+</div>
+<div class="flex h-12 w-12 items-center justify-center rounded-full bg-green-50 text-green-600 dark:bg-green-900/20 dark:text-green-400">
+<span class="material-symbols-outlined">payments</span>
+</div>
+</div>
+<div class="mt-4 flex items-center text-sm">
+<span class="flex items-center text-green-600 dark:text-green-400 font-medium">
+<span class="material-symbols-outlined mr-1 text-base">trending_up</span>
+                            12.5%
+                        </span>
+<span class="ml-2 text-slate-500 dark:text-slate-400">vs last month</span>
+</div>
+</div>
+<div class="relative overflow-hidden rounded-xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+<div class="flex items-center justify-between">
+<div>
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400">Appointments</p>
+<p class="mt-2 text-3xl font-bold text-slate-900 dark:text-white">124</p>
+</div>
+<div class="flex h-12 w-12 items-center justify-center rounded-full bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400">
+<span class="material-symbols-outlined">event_available</span>
+</div>
+</div>
+<div class="mt-4 flex items-center text-sm">
+<span class="flex items-center text-green-600 dark:text-green-400 font-medium">
+<span class="material-symbols-outlined mr-1 text-base">trending_up</span>
+                            5.0%
+                        </span>
+<span class="ml-2 text-slate-500 dark:text-slate-400">vs last month</span>
+</div>
+</div>
+<div class="relative overflow-hidden rounded-xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+<div class="flex items-center justify-between">
+<div>
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400">Pending Payments</p>
+<p class="mt-2 text-3xl font-bold text-slate-900 dark:text-white">$3,450</p>
+</div>
+<div class="flex h-12 w-12 items-center justify-center rounded-full bg-amber-50 text-amber-600 dark:bg-amber-900/20 dark:text-amber-400">
+<span class="material-symbols-outlined">pending_actions</span>
+</div>
+</div>
+<div class="mt-4 flex items-center text-sm">
+<span class="flex items-center text-red-600 dark:text-red-400 font-medium">
+<span class="material-symbols-outlined mr-1 text-base">trending_up</span>
+                            2.1%
+                        </span>
+<span class="ml-2 text-slate-500 dark:text-slate-400">vs last month</span>
+</div>
+</div>
+<div class="relative overflow-hidden rounded-xl border border-slate-200 bg-gradient-to-br from-primary/10 to-transparent p-6 shadow-sm dark:border-slate-800 dark:from-primary/20">
+<div class="flex items-center justify-between">
+<div>
+<p class="text-sm font-medium text-primary-700 dark:text-primary-300">Top Performer</p>
+<p class="mt-2 text-lg font-bold text-slate-900 dark:text-white">Dr. J. Smith</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">General Dentist</p>
+</div>
+<div class="h-12 w-12 rounded-full border-2 border-white bg-slate-200 shadow-sm overflow-hidden" data-alt="Top performing doctor portrait">
+<img alt="Doctor Smith" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSIYnZvRczuXEtjVcNybpf7FazqRD15mbA9leifhZA9YAVK1PJP0CNlTfxTdgferdX_v0GyDYvqZSdDVd4lj3zFriHZNG21vc5TW6eH23jUbantFatFTZXoXLQTchxP5gQFw_zSya9HRoGAse3oHh-pCjLdPSSMU7QT1n9fLHb974vxRfCG13tyJyscE2ZyWSbK7iUwTMHaNzxfFivRf-R3wriTDL-gKNiP-CO9BFduVwBSzvWZjLqjOY9EngtwCVW-EimOd6x5-1C"/>
+</div>
+</div>
+<div class="mt-3">
+<div class="h-2 w-full rounded-full bg-slate-200 dark:bg-slate-700">
+<div class="h-2 w-[85%] rounded-full bg-primary"></div>
+</div>
+<p class="mt-1 text-xs text-slate-500 text-right">85% Capacity</p>
+</div>
+</div>
+</div>
+<div class="rounded-xl border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900">
+<div class="border-b border-slate-200 px-6 pt-4 dark:border-slate-800">
+<nav aria-label="Tabs" class="-mb-px flex space-x-8">
+<a class="border-transparent text-slate-500 hover:border-slate-300 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-300 group inline-flex items-center border-b-2 py-4 px-1 text-sm font-medium" href="#">
+<span class="material-symbols-outlined mr-2 text-[20px]">history</span>
+                            Appointment History
+                        </a>
+<a aria-current="page" class="border-primary text-primary dark:text-primary-400 group inline-flex items-center border-b-2 py-4 px-1 text-sm font-medium" href="#">
+<span class="material-symbols-outlined mr-2 text-[20px]">monetization_on</span>
+                            Sales/Transactions
+                        </a>
+</nav>
+</div>
+<div class="flex flex-col gap-4 border-b border-slate-200 p-6 dark:border-slate-800 md:flex-row md:items-center">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="h-10 w-full rounded-lg border-slate-300 bg-slate-50 pl-10 pr-4 text-sm text-slate-900 focus:border-primary focus:ring-primary dark:border-slate-700 dark:bg-slate-800 dark:text-white dark:placeholder-slate-400" placeholder="Search by Staff or Patient Name" type="text"/>
+</div>
+<div class="flex gap-3">
+<div class="relative">
+<select class="h-10 cursor-pointer rounded-lg border-slate-300 bg-white px-4 text-sm font-medium text-slate-700 hover:border-slate-400 focus:border-primary focus:ring-primary dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200">
+<option>Status: All</option>
+<option>Paid</option>
+<option>Pending</option>
+<option>Unpaid</option>
+</select>
+</div>
+<div class="relative">
+<select class="h-10 cursor-pointer rounded-lg border-slate-300 bg-white px-4 text-sm font-medium text-slate-700 hover:border-slate-400 focus:border-primary focus:ring-primary dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200">
+<option>Staff: All</option>
+<option>Dr. Smith</option>
+<option>Dr. Doe</option>
+<option>Dr. White</option>
+</select>
+</div>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="min-w-full divide-y divide-slate-200 dark:divide-slate-800">
+<thead class="bg-slate-50 dark:bg-slate-800/50">
+<tr>
+<th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-slate-500 dark:text-slate-400" scope="col">ID</th>
+<th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-slate-500 dark:text-slate-400" scope="col">Date</th>
+<th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-slate-500 dark:text-slate-400" scope="col">Staff Member</th>
+<th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-slate-500 dark:text-slate-400" scope="col">Patient</th>
+<th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-slate-500 dark:text-slate-400" scope="col">Treatment</th>
+<th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-slate-500 dark:text-slate-400" scope="col">Amount</th>
+<th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-slate-500 dark:text-slate-400" scope="col">Status</th>
+<th class="relative px-6 py-3" scope="col">
+<span class="sr-only">Actions</span>
+</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-200 bg-white dark:divide-slate-800 dark:bg-slate-900">
+<tr class="group hover:bg-slate-50 dark:hover:bg-slate-800/50">
+<td class="whitespace-nowrap px-6 py-4 text-sm font-medium text-slate-900 dark:text-white">#TRX-9012</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm text-slate-500 dark:text-slate-400">Oct 24, 2023</td>
+<td class="whitespace-nowrap px-6 py-4">
+<div class="flex items-center">
+<div class="h-8 w-8 flex-shrink-0 rounded-full bg-slate-100 overflow-hidden" data-alt="Staff member profile">
+<img alt="" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPI-zS_3FtsMruyzaAckjIsyT4jrDy72ZD1ikriRdnmTN7k8yizyrnwe1OwIHCt8IEdzaywuDjtMvu6sH9ITzNVDGriOq5Z0BKPZ93139OMK91tWfHPpwjvEnYy5OKihypI_Y1P3I-mh-5Mqr5wPW6tCw2hCRc3VW5DhUs_G8mlHKovZ2voU-b9oezwYrrq8vfd2KiN3Abl8L0ATPSOKq8Z6NaM4neoEiaLlKU-T1yh4TqPGbcJy7Yk9z-USsTijWBSTnSoNhD9AJ7"/>
+</div>
+<div class="ml-3">
+<div class="text-sm font-medium text-slate-900 dark:text-white">Dr. J. Smith</div>
+</div>
+</div>
+</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm text-slate-500 dark:text-slate-400">Emma Watson</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm text-slate-500 dark:text-slate-400">Root Canal</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm font-medium text-slate-900 dark:text-white">$850.00</td>
+<td class="whitespace-nowrap px-6 py-4">
+<span class="inline-flex items-center rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800 dark:bg-green-900/30 dark:text-green-400">
+                                        Paid
+                                    </span>
+</td>
+<td class="whitespace-nowrap px-6 py-4 text-right text-sm font-medium">
+<button class="text-slate-400 hover:text-primary dark:text-slate-500 dark:hover:text-primary-400">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="group hover:bg-slate-50 dark:hover:bg-slate-800/50">
+<td class="whitespace-nowrap px-6 py-4 text-sm font-medium text-slate-900 dark:text-white">#TRX-9011</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm text-slate-500 dark:text-slate-400">Oct 24, 2023</td>
+<td class="whitespace-nowrap px-6 py-4">
+<div class="flex items-center">
+<div class="h-8 w-8 flex-shrink-0 rounded-full bg-slate-100 overflow-hidden" data-alt="Staff member profile">
+<img alt="" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbJ_vryX8G8qqpOQD-KrEyJsEyr3dJwtghVBln3QEdMUdnJwAqDj_7q-5q_s_p2u561bBWAEqusQnqKEv8ZUFaHFedrIYBEWuLkcF_b9RzcBtdQjyvmoJOVZ_aRGtyQMQtZHBZk333BOTr5KpM52efl3Wu2dgG_OkoXCEd93XHCXrwmj7D0xh4VRJGh0H2wMDRuzYZXhZO9f2t6zMDetmfLtvMMYWWNvv5pQIA9Yd5bhooayPg2KmKrf-1d5qljpkJZ8VWufb_jaFr"/>
+</div>
+<div class="ml-3">
+<div class="text-sm font-medium text-slate-900 dark:text-white">Dr. A. Doe</div>
+</div>
+</div>
+</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm text-slate-500 dark:text-slate-400">Robert Fox</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm text-slate-500 dark:text-slate-400">Consultation</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm font-medium text-slate-900 dark:text-white">$120.00</td>
+<td class="whitespace-nowrap px-6 py-4">
+<span class="inline-flex items-center rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-medium text-amber-800 dark:bg-amber-900/30 dark:text-amber-400">
+                                        Pending
+                                    </span>
+</td>
+<td class="whitespace-nowrap px-6 py-4 text-right text-sm font-medium">
+<button class="text-slate-400 hover:text-primary dark:text-slate-500 dark:hover:text-primary-400">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="group hover:bg-slate-50 dark:hover:bg-slate-800/50">
+<td class="whitespace-nowrap px-6 py-4 text-sm font-medium text-slate-900 dark:text-white">#TRX-9010</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm text-slate-500 dark:text-slate-400">Oct 23, 2023</td>
+<td class="whitespace-nowrap px-6 py-4">
+<div class="flex items-center">
+<div class="h-8 w-8 flex-shrink-0 rounded-full bg-slate-100 overflow-hidden" data-alt="Staff member profile">
+<img alt="" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBJ8ih-4XTEld52C160zkI8e0aZiuqt0ijOyUmzVPop9u2g4d1eolcUoBx-rM_ltCo1pKtkjBQa3I4uj4Hh40Krb9r6-0XiSXADHkshR2xSEmtcwnq5ThgOzqUG6lpczuHZpMMyu5-yTn6mTQhOw9-J934wWjrw_Fzw7PTFP5vaA5yUyPWv_pCQUjxIOCCRQ_pP4KAaCaFsj8Ez36CzHPt_cyj3e55hKAtzL6Zt2lqP8_BeYpfsG_P57BTwh1wLpQBMDGKATIjBZzh"/>
+</div>
+<div class="ml-3">
+<div class="text-sm font-medium text-slate-900 dark:text-white">Dr. L. White</div>
+</div>
+</div>
+</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm text-slate-500 dark:text-slate-400">Jenny Wilson</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm text-slate-500 dark:text-slate-400">Whitening</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm font-medium text-slate-900 dark:text-white">$350.00</td>
+<td class="whitespace-nowrap px-6 py-4">
+<span class="inline-flex items-center rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800 dark:bg-green-900/30 dark:text-green-400">
+                                        Paid
+                                    </span>
+</td>
+<td class="whitespace-nowrap px-6 py-4 text-right text-sm font-medium">
+<button class="text-slate-400 hover:text-primary dark:text-slate-500 dark:hover:text-primary-400">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="group hover:bg-slate-50 dark:hover:bg-slate-800/50">
+<td class="whitespace-nowrap px-6 py-4 text-sm font-medium text-slate-900 dark:text-white">#TRX-9009</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm text-slate-500 dark:text-slate-400">Oct 23, 2023</td>
+<td class="whitespace-nowrap px-6 py-4">
+<div class="flex items-center">
+<div class="h-8 w-8 flex-shrink-0 rounded-full bg-slate-100 overflow-hidden" data-alt="Staff member profile">
+<img alt="" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPxJa4IuZsWDZOh1L7ZxatJQ2fbD-hrPJ3bkKV31HnjXgxA0pPgpBJk4fanpVwV3ZUGAj6A4v9nZCGK18OG3P1VD7WoxvCXkiEo0YfCMgDr5XEzUsCibsJgB_89t-5sLYjsHGTI4Ouwq9UUhSQ4DQcFlVnwbOI3uCn6Gc6SAVSagii-VGYfLQrw-k8D1Jn_ahH-zDkT9YbRNCkQ3z9HnJU5b7lfvr4AiDJ6Bj0eLzCNSNInprQpYe5JnfB2upj-NGp-caC60QNsu7g"/>
+</div>
+<div class="ml-3">
+<div class="text-sm font-medium text-slate-900 dark:text-white">Dr. J. Smith</div>
+</div>
+</div>
+</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm text-slate-500 dark:text-slate-400">Guy Hawkins</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm text-slate-500 dark:text-slate-400">Extraction</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm font-medium text-slate-900 dark:text-white">$200.00</td>
+<td class="whitespace-nowrap px-6 py-4">
+<span class="inline-flex items-center rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-800 dark:bg-red-900/30 dark:text-red-400">
+                                        Unpaid
+                                    </span>
+</td>
+<td class="whitespace-nowrap px-6 py-4 text-right text-sm font-medium">
+<button class="text-slate-400 hover:text-primary dark:text-slate-500 dark:hover:text-primary-400">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="flex items-center justify-between border-t border-slate-200 px-6 py-4 dark:border-slate-800">
+<div class="text-sm text-slate-500 dark:text-slate-400">
+                        Showing <span class="font-medium">1</span> to <span class="font-medium">4</span> of <span class="font-medium">50</span> results
+                    </div>
+<div class="flex gap-2">
+<button class="inline-flex items-center rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-sm font-medium text-slate-700 hover:bg-slate-50 disabled:opacity-50 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700" disabled="">
+                            Previous
+                        </button>
+<button class="inline-flex items-center rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-sm font-medium text-slate-700 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700">
+                            Next
+                        </button>
+</div>
+</div>
+</div>
+<footer class="mt-8 border-t border-slate-200 py-6 text-center text-sm text-slate-500 dark:border-slate-800 dark:text-slate-400">
+<p>© 2023 Ivy Dental Clinic. All rights reserved. <span class="mx-2 hidden sm:inline">|</span> <span class="block sm:inline">Privacy Policy | Terms of Service | Support</span></p>
+</footer>
+</div>
+</main>
+</div>
+</body></html>

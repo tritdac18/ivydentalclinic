@@ -1,0 +1,9 @@
+{
+    "name": "acer/ivydentalclinic",
+    "description": "Ivy Dental Clinic - Gmail API Integration",
+    "type": "project",
+    "require": {
+        "php": ">=7.4",
+        "google/apiclient": "^2.19"
+    }
+}

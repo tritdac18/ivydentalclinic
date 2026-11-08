@@ -1,0 +1,32 @@
+# API Credentials (NEVER COMMIT THESE!)
+config/credentials.json
+config/gmail_token.json
+config/paymongo_keys.php
+
+# Composer
+vendor/
+composer.lock
+
+# Environment files
+.env
+.env.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+

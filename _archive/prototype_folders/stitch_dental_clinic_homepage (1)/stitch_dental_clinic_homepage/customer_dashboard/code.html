@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ivy Dental Clinic - Customer Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#136dec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-[#0d131b] dark:text-white antialiased overflow-hidden">
+<div class="flex h-screen w-full">
+<aside class="w-64 flex flex-col justify-between border-r border-[#e7ecf3] bg-white dark:bg-[#1c2430] dark:border-gray-700 hidden lg:flex">
+<div class="p-4 flex flex-col gap-8 h-full">
+<div class="flex items-center gap-3 px-2">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 shadow-sm" data-alt="Abstract blue logo of a tooth" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAbKD_r2nSTXnAgNEBCL1aVG_2VFZwAE7O_GX5ymyCCJV1HGQ965o6esu1Wk1Y5t9PQhFI8c4KfWDmGJ_VU7OQGb0RTYNyZBGlEavpGUDU54LMqu6LNXcL1MwJBaBO4Bvxlh2L9B29EqiTUPqt_7u24McbASdvmwfxhByqcqx5j6pnRDpgdPJG41pdRGoTaRXMhYBxJiMPWoKgpsbUhEbeZXFx0Ed1xfR0e1HOm8VQp4EeOOOfREXxv1CppwRpxqFnM8_hSJ2O1nOzb");'></div>
+<div class="flex flex-col">
+<h1 class="text-lg font-bold leading-tight">Ivy Dental Clinic</h1>
+<p class="text-slate-500 text-xs font-medium dark:text-slate-400">Patient Portal</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2 grow">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary dark:bg-primary/20 dark:text-primary-light" href="#">
+<span class="material-symbols-outlined filled">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-sm font-medium">Profile</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="text-sm font-medium">Appointments</span>
+</a>
+</nav>
+<div class="border-t border-slate-100 pt-4 dark:border-slate-700">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 hover:text-red-600 hover:bg-red-50 dark:text-slate-300 dark:hover:bg-red-900/20 dark:hover:text-red-400 transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-red-600 dark:group-hover:text-red-400">logout</span>
+<span class="text-sm font-medium">Logout</span>
+</a>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col h-full overflow-hidden relative">
+<header class="flex items-center justify-between border-b border-[#e7ecf3] bg-white px-6 py-4 dark:bg-[#1c2430] dark:border-gray-700 shrink-0">
+<div class="flex items-center gap-4 lg:hidden">
+<button class="text-slate-600 dark:text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h2 class="text-lg font-bold">Dashboard</h2>
+</div>
+<div class="hidden lg:flex items-center">
+<h2 class="text-xl font-bold tracking-tight">Overview</h2>
+</div>
+<div class="flex items-center gap-4 ml-auto">
+<div class="flex items-center gap-3">
+<div class="text-right hidden sm:block">
+<p class="text-sm font-bold leading-none">Sarah Jenkins</p>
+<p class="text-xs text-slate-500 mt-1 dark:text-slate-400">ID: #89201</p>
+</div>
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 border-2 border-white shadow-sm ring-2 ring-slate-100 dark:ring-slate-700" data-alt="Portrait of a smiling woman" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD1SY4UmPivypsJU34CQ5jGTEb-9mXi2F9LRDjE1AHt9YQ2xVY11KUvVivNyezj0f6bigzuoTvTlTcmNICb5ZbwsLOFqrMRf-xsUnwoZb93hWMjNcrjxuuz2afVBalypX1p8LQ67xfjaOGlxZ0LQ8KBj_TdqlFX8geParrGtXb0c4REaxWSRq5Gxa-VkBGqlumwJmvcK3Py7xYsSmLFhSEXyZeahhreMa4EdsPUE99PGVmIaAnt0SxH5VZj0ZbXGTDa7CHPqyvWm60i");'></div>
+</div>
+</div>
+</header>
+<div class="flex-1 overflow-y-auto bg-slate-50 dark:bg-[#0f151e] p-6 lg:p-10">
+<div class="max-w-6xl mx-auto flex flex-col gap-8">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+<div>
+<h1 class="text-3xl font-bold text-slate-900 dark:text-white tracking-tight">Welcome back, Sarah 👋</h1>
+<p class="text-slate-500 mt-2 dark:text-slate-400">Manage your profile, view appointments, and access your dashboard.</p>
+</div>
+<div class="flex gap-3">
+<a class="flex items-center gap-2 bg-white text-slate-700 hover:bg-slate-50 hover:text-slate-900 font-semibold transition-colors px-4 py-2 rounded-lg shadow-sm border border-slate-200 dark:bg-[#1c2430] dark:border-gray-700 dark:text-slate-300 dark:hover:text-white" href="#">
+<span class="material-symbols-outlined text-lg">person</span>
+<span>My Profile</span>
+</a>
+<a class="flex items-center gap-2 bg-primary text-white hover:bg-blue-700 font-semibold transition-colors px-4 py-2 rounded-lg shadow-sm border border-transparent" href="#">
+<span class="material-symbols-outlined text-lg">add</span>
+<span>New Appointment</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm dark:bg-[#1c2430] dark:border-gray-700 flex flex-col h-full col-span-1 md:col-span-2">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Upcoming Appointments</h3>
+<a class="text-primary text-sm font-semibold hover:underline" href="#">View All</a>
+</div>
+<div class="space-y-4">
+<div class="flex items-start gap-4 p-4 rounded-lg bg-blue-50/50 border border-blue-100 dark:bg-blue-900/10 dark:border-blue-900/30">
+<div class="bg-blue-100 text-blue-600 rounded-lg p-3 shrink-0 dark:bg-blue-900/30 dark:text-blue-400">
+<span class="material-symbols-outlined block text-xl">calendar_clock</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white">Orthodontist Consultation</h4>
+<p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Dr. Emily Chen</p>
+</div>
+<span class="bg-white text-slate-700 text-xs font-bold px-2 py-1 rounded border border-slate-200 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-300">Oct 24</span>
+</div>
+<div class="flex items-center gap-4 mt-3 text-sm text-slate-600 dark:text-slate-400">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+                                            10:00 AM - 11:00 AM
+                                        </span>
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+                                            Room 302
+                                        </span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-center p-8 text-center border-2 border-dashed border-slate-200 rounded-lg dark:border-slate-700">
+<div>
+<span class="material-symbols-outlined text-slate-300 text-4xl mb-2">event_available</span>
+<p class="text-slate-500 text-sm">No other upcoming appointments scheduled.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm dark:bg-[#1c2430] dark:border-gray-700 flex flex-col h-full">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Previous Transactions</h3>
+<a class="text-primary text-sm font-semibold hover:underline" href="#">View All</a>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between p-3 rounded-lg border border-slate-100 bg-slate-50 dark:bg-slate-800/50 dark:border-slate-700">
+<div class="flex items-center gap-3">
+<div class="bg-green-100 text-green-600 dark:bg-green-900/30 dark:text-green-400 rounded-lg p-2 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-900 dark:text-white">General Checkup</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Sep 24, 2023</p>
+</div>
+</div>
+<span class="text-sm font-bold text-slate-900 dark:text-white">$75.00</span>
+</div>
+<div class="flex items-center justify-between p-3 rounded-lg border border-slate-100 bg-slate-50 dark:bg-slate-800/50 dark:border-slate-700">
+<div class="flex items-center gap-3">
+<div class="bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400 rounded-lg p-2 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">dentistry</span>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-900 dark:text-white">Teeth Whitening</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Aug 12, 2023</p>
+</div>
+</div>
+<span class="text-sm font-bold text-slate-900 dark:text-white">$250.00</span>
+</div>
+<div class="flex items-center justify-between p-3 rounded-lg border border-slate-100 bg-slate-50 dark:bg-slate-800/50 dark:border-slate-700">
+<div class="flex items-center gap-3">
+<div class="bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400 rounded-lg p-2 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">receipt_long</span>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-900 dark:text-white">X-Ray Scan</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Jun 05, 2023</p>
+</div>
+</div>
+<span class="text-sm font-bold text-slate-900 dark:text-white">$100.00</span>
+</div>
+</div>
+<button class="w-full mt-auto mt-6 py-2 px-4 bg-slate-50 hover:bg-slate-100 text-slate-700 font-medium rounded-lg border border-slate-200 transition-colors text-sm dark:bg-slate-800 dark:hover:bg-slate-700 dark:border-slate-700 dark:text-slate-300">
+                            Download Statements
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

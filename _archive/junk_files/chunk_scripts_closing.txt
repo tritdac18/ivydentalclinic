@@ -1,0 +1,82 @@
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script>
+<?php if ($edit_mode): ?>
+flatpickr("#dob", {
+    dateFormat: "m/d/Y",
+    maxDate: "today",
+    defaultDate: document.getElementById("dob").value
+});
+<?php endif; ?>
+
+function addAllergyField() {
+    const container = document.getElementById('allergies-container');
+    const newField = document.createElement('div');
+    newField.className = 'flex gap-2 items-center';
+    newField.innerHTML = `
+        <input class="flex-1 rounded-lg border border-[#e7ecf3] bg-white dark:bg-[#1a2634] dark:border-slate-700 text-[#0d131b] dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary h-10 px-4 transition-all" placeholder="e.g., Penicillin, Latex, Peanuts" type="text" name="allergies[]" value=""/>
+        <button type="button" onclick="removeAllergy(this)" class="rounded-lg border border-red-300 bg-red-50 dark:bg-red-900/20 dark:border-red-800 text-red-600 dark:text-red-400 hover:bg-red-100 dark:hover:bg-red-900/30 h-10 w-10 flex items-center justify-center transition-colors">
+            <span class="material-symbols-outlined text-[18px]">close</span>
+        </button>
+    `;
+    container.appendChild(newField);
+}
+
+function removeAllergy(button) {
+    const row = button.closest('.flex.gap-2');
+    if (row) {
+        row.remove();
+    }
+}
+
+function confirmLogout(event) {
+    event.preventDefault();
+    const modal = document.getElementById('confirmModal');
+    const content = document.getElementById('confirmModalContent');
+    if (modal && content) {
+        content.innerHTML = `
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="text-lg font-bold text-[#0d131b] dark:text-white">Log Out?</h3>
+                <button onclick="closeConfirmModal()" class="text-[#4c6c9a] hover:text-[#0d131b] dark:text-slate-400 dark:hover:text-white">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <p class="text-sm text-[#4c6c9a] dark:text-slate-400 mb-4">Are you sure you want to log out?</p>
+            <div class="flex gap-2">
+                <button type="button" onclick="closeConfirmModal()" class="flex-1 rounded-lg border border-[#cfd9e7] dark:border-slate-600 bg-white dark:bg-[#1a2634] text-[#0d131b] dark:text-white py-2 text-sm font-semibold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                    No
+                </button>
+                <a href="logout.php" class="flex-1 rounded-lg bg-red-600 text-white py-2 text-sm font-semibold hover:bg-red-700 transition-colors text-center">
+                    Yes
+                </a>
+            </div>
+        `;
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+    }
+}
+
+function closeConfirmModal(event) {
+    if (event && event.target !== event.currentTarget) return;
+    const modal = document.getElementById('confirmModal');
+    if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+    }
+}
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeConfirmModal();
+    }
+});
+</script>
+
+<div id="confirmModal" class="fixed inset-0 bg-black/50 z-50 hidden items-center justify-center p-4" onclick="closeConfirmModal(event)">
+<div class="bg-white dark:bg-[#1a2634] rounded-xl shadow-xl max-w-md w-full p-6" onclick="event.stopPropagation()">
+<div id="confirmModalContent">
+</div>
+</div>
+</div>
+</body>
+</html>

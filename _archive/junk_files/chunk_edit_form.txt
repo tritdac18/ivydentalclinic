@@ -1,0 +1,122 @@
+<?php if ($edit_mode): ?>
+<form method="POST" action="profile.php">
+<input type="hidden" name="update_profile" value="1">
+<div class="grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2">
+<div class="col-span-1 sm:col-span-2">
+<label class="mb-1 block text-sm font-medium text-[#4c6c9a] dark:text-slate-400">Username</label>
+<input type="text" name="username" value="<?php echo htmlspecialchars($user_info['username'] ?? ''); ?>" readonly class="w-full rounded-lg border border-[#e7ecf3] bg-slate-50 dark:bg-slate-800 dark:border-slate-700 text-[#0d131b] dark:text-white h-10 px-4 transition-all cursor-not-allowed" placeholder="Username"/>
+<p class="text-xs text-[#4c6c9a] dark:text-slate-400 mt-1">Username cannot be changed</p>
+</div>
+<div class="col-span-1">
+<label class="mb-1 block text-sm font-medium text-[#4c6c9a] dark:text-slate-400">First Name</label>
+<input type="text" name="first_name" value="<?php echo htmlspecialchars($user_info['first_name'] ?? ''); ?>" required class="w-full rounded-lg border border-[#e7ecf3] bg-white dark:bg-[#1a2634] dark:border-slate-700 text-[#0d131b] dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary h-10 px-4 transition-all" placeholder="First Name"/>
+</div>
+<div class="col-span-1">
+<label class="mb-1 block text-sm font-medium text-[#4c6c9a] dark:text-slate-400">Last Name</label>
+<input type="text" name="last_name" value="<?php echo htmlspecialchars($user_info['last_name'] ?? ''); ?>" required class="w-full rounded-lg border border-[#e7ecf3] bg-white dark:bg-[#1a2634] dark:border-slate-700 text-[#0d131b] dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary h-10 px-4 transition-all" placeholder="Last Name"/>
+</div>
+<?php if ($user_type === 'patient'): ?>
+<div class="col-span-1 sm:col-span-2 border-t border-slate-100 pt-4 dark:border-slate-700/50">
+<label class="mb-1 block text-sm font-medium text-[#4c6c9a] dark:text-slate-400">Email Address</label>
+<div class="relative">
+<input type="email" name="email" value="<?php echo htmlspecialchars($user_info['email'] ?? ''); ?>" required class="w-full rounded-lg border border-[#e7ecf3] bg-white dark:bg-[#1a2634] dark:border-slate-700 text-[#0d131b] dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary h-10 px-4 pr-10 transition-all" placeholder="email@example.com"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-[#4c6c9a] text-[20px] pointer-events-none">mail</span>
+</div>
+</div>
+<div class="col-span-1 border-t border-slate-100 pt-4 dark:border-slate-700/50">
+<label class="mb-1 block text-sm font-medium text-[#4c6c9a] dark:text-slate-400">Date of Birth</label>
+<div class="relative">
+<input type="text" name="dob" id="dob" value="<?php echo htmlspecialchars($dob_input); ?>" required class="w-full rounded-lg border border-[#e7ecf3] bg-white dark:bg-[#1a2634] dark:border-slate-700 text-[#0d131b] dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary h-10 px-4 pr-10 transition-all" placeholder="MM/DD/YYYY"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-[#4c6c9a] text-[20px] pointer-events-none">calendar_today</span>
+</div>
+</div>
+<div class="col-span-1 border-t border-slate-100 pt-4 dark:border-slate-700/50">
+<label class="mb-1 block text-sm font-medium text-[#4c6c9a] dark:text-slate-400">Phone Number</label>
+<div class="relative">
+<input type="tel" name="primary_phone" value="<?php echo htmlspecialchars($user_info['primary_phone'] ?? ''); ?>" required class="w-full rounded-lg border border-[#e7ecf3] bg-white dark:bg-[#1a2634] dark:border-slate-700 text-[#0d131b] dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary h-10 px-4 pr-10 transition-all" placeholder="(+63) 900-000-0000"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-[#4c6c9a] text-[20px] pointer-events-none">call</span>
+</div>
+</div>
+<div class="col-span-1 border-t border-slate-100 pt-4 dark:border-slate-700/50">
+<label class="mb-1 block text-sm font-medium text-[#4c6c9a] dark:text-slate-400">Blood Type</label>
+<select name="blood_type" class="w-full rounded-lg border border-[#e7ecf3] bg-white dark:bg-[#1a2634] dark:border-slate-700 text-[#0d131b] dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary h-10 px-4 transition-all">
+<option value="Unknown" <?php echo (($user_info['blood_type'] ?? 'Unknown') === 'Unknown') ? 'selected' : ''; ?>>Unknown</option>
+<option value="A+" <?php echo (($user_info['blood_type'] ?? '') === 'A+') ? 'selected' : ''; ?>>A+</option>
+<option value="A-" <?php echo (($user_info['blood_type'] ?? '') === 'A-') ? 'selected' : ''; ?>>A-</option>
+<option value="B+" <?php echo (($user_info['blood_type'] ?? '') === 'B+') ? 'selected' : ''; ?>>B+</option>
+<option value="B-" <?php echo (($user_info['blood_type'] ?? '') === 'B-') ? 'selected' : ''; ?>>B-</option>
+<option value="AB+" <?php echo (($user_info['blood_type'] ?? '') === 'AB+') ? 'selected' : ''; ?>>AB+</option>
+<option value="AB-" <?php echo (($user_info['blood_type'] ?? '') === 'AB-') ? 'selected' : ''; ?>>AB-</option>
+<option value="O+" <?php echo (($user_info['blood_type'] ?? '') === 'O+') ? 'selected' : ''; ?>>O+</option>
+<option value="O-" <?php echo (($user_info['blood_type'] ?? '') === 'O-') ? 'selected' : ''; ?>>O-</option>
+</select>
+</div>
+<div class="col-span-1 border-t border-slate-100 pt-4 dark:border-slate-700/50">
+<label class="mb-1 block text-sm font-medium text-[#4c6c9a] dark:text-slate-400">Gender</label>
+<select name="gender" class="w-full rounded-lg border border-[#e7ecf3] bg-white dark:bg-[#1a2634] dark:border-slate-700 text-[#0d131b] dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary h-10 px-4 transition-all">
+<option value="Prefer not to say" <?php echo (($user_info['gender'] ?? 'Prefer not to say') === 'Prefer not to say') ? 'selected' : ''; ?>>Prefer not to say</option>
+<option value="Male" <?php echo (($user_info['gender'] ?? '') === 'Male') ? 'selected' : ''; ?>>Male</option>
+<option value="Female" <?php echo (($user_info['gender'] ?? '') === 'Female') ? 'selected' : ''; ?>>Female</option>
+<option value="Other" <?php echo (($user_info['gender'] ?? '') === 'Other') ? 'selected' : ''; ?>>Other</option>
+</select>
+</div>
+<div class="col-span-1 sm:col-span-2 border-t border-slate-100 pt-4 dark:border-slate-700/50">
+<label class="mb-1 block text-sm font-medium text-[#4c6c9a] dark:text-slate-400">Allergies</label>
+<div id="allergies-container" class="space-y-2">
+<?php
+$existing_allergies = $user_info['allergies'] ?? [];
+if (empty($existing_allergies)) {
+    $existing_allergies = [''];
+}
+foreach ($existing_allergies as $index => $allergy): ?>
+<div class="flex gap-2 items-center">
+<input class="flex-1 rounded-lg border border-[#e7ecf3] bg-white dark:bg-[#1a2634] dark:border-slate-700 text-[#0d131b] dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary h-10 px-4 transition-all" placeholder="e.g., Penicillin, Latex, Peanuts" type="text" name="allergies[]" value="<?php echo htmlspecialchars($allergy); ?>"/>
+<?php if ($index > 0 || !empty($allergy)): ?>
+<button type="button" onclick="removeAllergy(this)" class="rounded-lg border border-red-300 bg-red-50 dark:bg-red-900/20 dark:border-red-800 text-red-600 dark:text-red-400 hover:bg-red-100 dark:hover:bg-red-900/30 h-10 w-10 flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+<?php endif; ?>
+</div>
+<?php endforeach; ?>
+</div>
+<button type="button" onclick="addAllergyField()" class="mt-2 text-sm text-primary hover:underline flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Add another allergy</span>
+</button>
+</div>
+<?php else: ?>
+<div class="col-span-1 sm:col-span-2 border-t border-slate-100 pt-4 dark:border-slate-700/50">
+<label class="mb-1 block text-sm font-medium text-[#4c6c9a] dark:text-slate-400">Email Address</label>
+<div class="relative">
+<input type="email" name="email" value="<?php echo htmlspecialchars($user_info['email'] ?? ''); ?>" required class="w-full rounded-lg border border-[#e7ecf3] bg-white dark:bg-[#1a2634] dark:border-slate-700 text-[#0d131b] dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary h-10 px-4 pr-10 transition-all" placeholder="email@example.com"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-[#4c6c9a] text-[20px] pointer-events-none">mail</span>
+</div>
+</div>
+<div class="col-span-1 border-t border-slate-100 pt-4 dark:border-slate-700/50">
+<label class="mb-1 block text-sm font-medium text-[#4c6c9a] dark:text-slate-400">Phone Number</label>
+<div class="relative">
+<input type="tel" name="phone_number" value="<?php echo htmlspecialchars($user_info['phone_number'] ?? ''); ?>" required class="w-full rounded-lg border border-[#e7ecf3] bg-white dark:bg-[#1a2634] dark:border-slate-700 text-[#0d131b] dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary h-10 px-4 pr-10 transition-all" placeholder="(+63) 900-000-0000"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-[#4c6c9a] text-[20px] pointer-events-none">call</span>
+</div>
+</div>
+<div class="col-span-1 border-t border-slate-100 pt-4 dark:border-slate-700/50">
+<label class="mb-1 block text-sm font-medium text-[#4c6c9a] dark:text-slate-400">License Number</label>
+<input type="text" name="license_number" value="<?php echo htmlspecialchars($user_info['license_number'] ?? ''); ?>" class="w-full rounded-lg border border-[#e7ecf3] bg-white dark:bg-[#1a2634] dark:border-slate-700 text-[#0d131b] dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary h-10 px-4 transition-all" placeholder="License Number (Optional)"/>
+</div>
+<?php endif; ?>
+<?php if ($user_type === 'staff'): ?>
+<div class="col-span-1 sm:col-span-2 border-t border-slate-100 pt-4 dark:border-slate-700/50">
+<label class="mb-1 block text-sm font-medium text-[#4c6c9a] dark:text-slate-400">Role</label>
+<div class="text-base font-medium text-[#0d131b] dark:text-white"><?php echo htmlspecialchars($user_info['role'] ?? 'N/A'); ?></div>
+<p class="text-xs text-[#4c6c9a] dark:text-slate-400 mt-1">Role cannot be changed</p>
+</div>
+<?php endif; ?>
+<div class="col-span-1 sm:col-span-2 pt-4">
+<button type="submit" class="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-6 py-2 text-sm font-medium text-white shadow-md shadow-blue-500/20 hover:bg-primary-dark transition-all">
+<span class="material-symbols-outlined text-[20px]">save</span>
+<span>Save Changes</span>
+</button>
+</div>
+</div>
+</form>
+<?php else: ?>

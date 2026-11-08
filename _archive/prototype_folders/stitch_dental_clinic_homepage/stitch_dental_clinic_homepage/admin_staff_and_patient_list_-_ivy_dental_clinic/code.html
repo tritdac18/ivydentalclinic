@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin Staff and Patient List - Ivy Dental Clinic</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#136dec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }.scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#0d131b] dark:text-white">
+<div class="flex min-h-screen w-full">
+<aside class="w-64 flex-shrink-0 bg-white dark:bg-[#1a2634] border-r border-slate-200 dark:border-slate-800 flex flex-col fixed h-full z-10 hidden lg:flex">
+<div class="h-full flex flex-col justify-between p-4">
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-3 px-2">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 bg-primary/10 flex items-center justify-center text-primary" data-alt="Ivy Dental Logo Abstract">
+<span class="material-symbols-outlined text-[28px]">dentistry</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-base font-bold leading-normal">Ivy Dental Clinic</h1>
+<p class="text-[#4c6c9a] dark:text-slate-400 text-sm font-normal">Admin Panel</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-500 group-hover:text-primary dark:text-slate-400">dashboard</span>
+<p class="text-slate-600 dark:text-slate-300 text-sm font-medium group-hover:text-primary">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-500 group-hover:text-primary dark:text-slate-400">calendar_month</span>
+<p class="text-slate-600 dark:text-slate-300 text-sm font-medium group-hover:text-primary">Schedule</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary" href="#">
+<span class="material-symbols-outlined fill-1">group</span>
+<p class="text-sm font-bold">Patients</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-500 group-hover:text-primary dark:text-slate-400">medical_services</span>
+<p class="text-slate-600 dark:text-slate-300 text-sm font-medium group-hover:text-primary">Services</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-500 group-hover:text-primary dark:text-slate-400">attach_money</span>
+<p class="text-slate-600 dark:text-slate-300 text-sm font-medium group-hover:text-primary">Finances</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-500 group-hover:text-primary dark:text-slate-400">bar_chart</span>
+<p class="text-slate-600 dark:text-slate-300 text-sm font-medium group-hover:text-primary">Reports</p>
+</a>
+</nav>
+</div>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-red-50 hover:text-red-600 transition-colors group mt-auto" href="#">
+<span class="material-symbols-outlined text-slate-500 group-hover:text-red-600 dark:text-slate-400">logout</span>
+<p class="text-slate-600 dark:text-slate-300 text-sm font-medium group-hover:text-red-600">Log Out</p>
+</a>
+</div>
+</aside>
+<main class="flex-1 flex flex-col lg:ml-64 min-w-0 overflow-hidden">
+<header class="lg:hidden bg-white dark:bg-[#1a2634] border-b border-slate-200 dark:border-slate-800 p-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-8 bg-primary/10 flex items-center justify-center text-primary" data-alt="Ivy Dental Logo Abstract">
+<span class="material-symbols-outlined text-[20px]">dentistry</span>
+</div>
+<span class="font-bold text-lg">Ivy Dental Clinic</span>
+</div>
+<button class="text-slate-500">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<header class="hidden lg:flex bg-white dark:bg-[#1a2634] border-b border-slate-200 dark:border-slate-800 h-16 px-8 items-center justify-between sticky top-0 z-20">
+<h2 class="text-lg font-bold text-slate-800 dark:text-white">Staff &amp; Patient Directory</h2>
+<div class="flex items-center gap-4">
+<div class="text-right">
+<p class="text-sm font-bold text-slate-900 dark:text-white">Dr. Sarah Smith</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Admin</p>
+</div>
+<div class="size-10 rounded-full overflow-hidden bg-slate-200">
+<img alt="Dr. Sarah Smith" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxh9109nzlnvWacfwH72nB-YvMPtUcXKG5F9pZ2AlU6-1RUec4jFm5McjBeVm3wtZ28zp4LXF44rJXGLNQYx5MNjU05AWW8DDku9Ex0hMVA_LUs_hzArIQla4wgQyH0j7lTgYvSrjmnbXDyXQC0OJyFDYxUlbE2XEri_8r0vRF3UzbQbR917FbIdS7ON5WmdNcTpN0AQgggM-l4fT5g4JEeCJaYqU8HKmfGy8HA61j7RH6K033k6EqvVv9Mma8xAOnjkURsK2UM3de"/>
+</div>
+</div>
+</header>
+<div class="flex-1 overflow-y-auto p-4 md:p-8 max-w-[1400px] mx-auto w-full">
+<div class="mb-6 flex flex-wrap items-center gap-2 text-sm">
+<a class="text-slate-500 hover:text-primary font-medium" href="#">Home</a>
+<span class="text-slate-400">/</span>
+<span class="text-slate-900 dark:text-white font-medium">Directory</span>
+</div>
+<div class="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h1 class="text-3xl font-black tracking-tight text-[#0d131b] dark:text-white mb-2">Staff &amp; Patient Directory</h1>
+<p class="text-[#4c6c9a] dark:text-slate-400 text-base">Manage your clinic's staff assignments and patient records.</p>
+</div>
+</div>
+<div class="mb-6 border-b border-[#cfd9e7] dark:border-slate-700">
+<div class="flex gap-8">
+<button class="flex items-center gap-2 border-b-[3px] border-primary text-primary pb-3 px-1 transition-colors">
+<span class="material-symbols-outlined text-[20px]">stethoscope</span>
+<span class="text-sm font-bold tracking-wide">Staff List</span>
+</button>
+<button class="flex items-center gap-2 border-b-[3px] border-transparent text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 pb-3 px-1 transition-colors">
+<span class="material-symbols-outlined text-[20px]">patient_list</span>
+<span class="text-sm font-bold tracking-wide">Patient List</span>
+</button>
+</div>
+</div>
+<div class="bg-white dark:bg-[#1a2634] p-4 rounded-xl border border-slate-200 dark:border-slate-700 mb-6 shadow-sm">
+<div class="flex flex-col lg:flex-row gap-4 justify-between items-start lg:items-center">
+<div class="relative w-full lg:max-w-md">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 material-symbols-outlined">search</span>
+<input class="w-full pl-10 pr-4 py-2.5 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder:text-slate-400" placeholder="Search by name, ID, or role..." type="text"/>
+</div>
+<div class="flex flex-wrap items-center gap-3 w-full lg:w-auto">
+<select class="px-3 py-2.5 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm text-slate-700 dark:text-slate-300 focus:ring-2 focus:ring-primary outline-none cursor-pointer">
+<option value="">All Roles</option>
+<option value="dentist">Dentist</option>
+<option value="hygienist">Hygienist</option>
+<option value="receptionist">Receptionist</option>
+</select>
+<select class="px-3 py-2.5 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm text-slate-700 dark:text-slate-300 focus:ring-2 focus:ring-primary outline-none cursor-pointer">
+<option value="">All Status</option>
+<option value="active">Active</option>
+<option value="leave">On Leave</option>
+<option value="inactive">Inactive</option>
+</select>
+<button class="ml-auto lg:ml-0 flex items-center gap-2 bg-primary hover:bg-blue-600 text-white px-4 py-2.5 rounded-lg text-sm font-medium transition-colors shadow-sm shadow-blue-200 dark:shadow-none">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>Add New Staff</span>
+</button>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-[#1a2634] rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50 dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
+<th class="py-4 px-6 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Employee</th>
+<th class="py-4 px-6 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">ID</th>
+<th class="py-4 px-6 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Role</th>
+<th class="py-4 px-6 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Status</th>
+<th class="py-4 px-6 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Contact</th>
+<th class="py-4 px-6 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-700">
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors group">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full overflow-hidden bg-slate-200 shrink-0">
+<img alt="Dr. Sarah Jenkins Portrait" class="w-full h-full object-cover" data-alt="Female doctor with stethoscope" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxh9109nzlnvWacfwH72nB-YvMPtUcXKG5F9pZ2AlU6-1RUec4jFm5McjBeVm3wtZ28zp4LXF44rJXGLNQYx5MNjU05AWW8DDku9Ex0hMVA_LUs_hzArIQla4wgQyH0j7lTgYvSrjmnbXDyXQC0OJyFDYxUlbE2XEri_8r0vRF3UzbQbR917FbIdS7ON5WmdNcTpN0AQgggM-l4fT5g4JEeCJaYqU8HKmfGy8HA61j7RH6K033k6EqvVv9Mma8xAOnjkURsK2UM3de"/>
+</div>
+<div>
+<p class="font-semibold text-slate-900 dark:text-white text-sm">Dr. Sarah Jenkins</p>
+<p class="text-xs text-slate-500">General Dentistry</p>
+</div>
+</div>
+</td>
+<td class="py-4 px-6">
+<span class="text-sm font-mono text-slate-600 dark:text-slate-300">#ST-001</span>
+</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-2 text-slate-700 dark:text-slate-300 text-sm">
+<span class="material-symbols-outlined text-[18px] text-primary">dentistry</span>
+                                    Dentist
+                                </div>
+</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800">
+<span class="size-1.5 rounded-full bg-emerald-500"></span>
+                                    Active
+                                </span>
+</td>
+<td class="py-4 px-6">
+<div class="flex flex-col text-sm">
+<span class="text-slate-700 dark:text-slate-300">sarah.j@ivydental.com</span>
+<span class="text-xs text-slate-500">+1 (555) 012-3456</span>
+</div>
+</td>
+<td class="py-4 px-6 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-500 hover:text-primary transition-colors" title="Edit Profile">
+<span class="material-symbols-outlined text-[20px]">edit_square</span>
+</button>
+<button class="p-2 rounded-lg hover:bg-red-50 dark:hover:bg-red-900/20 text-slate-500 hover:text-red-600 transition-colors" title="Remove">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors group">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full overflow-hidden bg-slate-200 shrink-0">
+<img alt="Mark Thompson Portrait" class="w-full h-full object-cover" data-alt="Male medical professional smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAto1MVUbllxi0dn_AoRKYUyoutTVLHbwxYit6K9BxU8gdblbZL1Tppowsuq-k_ZH-EPNpK023zecg8kcWx09jUMsn9cYb9t9fci56C7k0m7E5KcqrvPy_Ttsi7GnrOxHgNXzn1r8tYEFu1WjL4bjRxKQc9GFYazyAJIOehMBcqt1P8mDGX32R-H1yaGwXbiZmJjMK5ha53s7KLjt5mYEid-1xJB7bJKeZZo_Tl3_FY3tn9dvcsKPs2Pj76rxQL5tQn5TasOZFRn1y8"/>
+</div>
+<div>
+<p class="font-semibold text-slate-900 dark:text-white text-sm">Mark Thompson</p>
+<p class="text-xs text-slate-500">Orthodontics Team</p>
+</div>
+</div>
+</td>
+<td class="py-4 px-6">
+<span class="text-sm font-mono text-slate-600 dark:text-slate-300">#ST-024</span>
+</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-2 text-slate-700 dark:text-slate-300 text-sm">
+<span class="material-symbols-outlined text-[18px] text-indigo-500">clean_hands</span>
+                                    Hygienist
+                                </div>
+</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-400 border border-amber-200 dark:border-amber-800">
+<span class="size-1.5 rounded-full bg-amber-500"></span>
+                                    On Leave
+                                </span>
+</td>
+<td class="py-4 px-6">
+<div class="flex flex-col text-sm">
+<span class="text-slate-700 dark:text-slate-300">mark.t@ivydental.com</span>
+<span class="text-xs text-slate-500">+1 (555) 019-2834</span>
+</div>
+</td>
+<td class="py-4 px-6 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-500 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">edit_square</span>
+</button>
+<button class="p-2 rounded-lg hover:bg-red-50 dark:hover:bg-red-900/20 text-slate-500 hover:text-red-600 transition-colors">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors group">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full overflow-hidden bg-slate-200 shrink-0">
+<img alt="Emily Chen Portrait" class="w-full h-full object-cover" data-alt="Professional woman in business casual" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_tRI9UxSROEU5hl2a5oVUIl8xAZ1Wn3Il7Z3c8IZGD6z4eF9lVLedc07UQDNS1JpmL3ZBz-mZ5Sfz3Bm8ilYJ1IIz5ymv1SqNN4PnrHkf70uTtOF6zdagtDEJnIG8Yv-4_e7TOWq6WFLx8tmS282E3f4efO7YUZW6E4zFBkp_kHzmnFVSttmzN1rUk_5vCdnIAqERQfotCYYKWKMkfuNQE2omNxATEo6-EpxeuP_Y_ZdQlL82JEcx410kOdiPQ7-FZpznkGeG9Xum"/>
+</div>
+<div>
+<p class="font-semibold text-slate-900 dark:text-white text-sm">Emily Chen</p>
+<p class="text-xs text-slate-500">Front Desk</p>
+</div>
+</div>
+</td>
+<td class="py-4 px-6">
+<span class="text-sm font-mono text-slate-600 dark:text-slate-300">#ST-008</span>
+</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-2 text-slate-700 dark:text-slate-300 text-sm">
+<span class="material-symbols-outlined text-[18px] text-pink-500">support_agent</span>
+                                    Receptionist
+                                </div>
+</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800">
+<span class="size-1.5 rounded-full bg-emerald-500"></span>
+                                    Active
+                                </span>
+</td>
+<td class="py-4 px-6">
+<div class="flex flex-col text-sm">
+<span class="text-slate-700 dark:text-slate-300">emily.c@ivydental.com</span>
+<span class="text-xs text-slate-500">+1 (555) 987-6543</span>
+</div>
+</td>
+<td class="py-4 px-6 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-500 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">edit_square</span>
+</button>
+<button class="p-2 rounded-lg hover:bg-red-50 dark:hover:bg-red-900/20 text-slate-500 hover:text-red-600 transition-colors">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors group">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full overflow-hidden bg-slate-200 shrink-0">
+<div class="w-full h-full bg-purple-100 text-purple-600 flex items-center justify-center font-bold text-sm">DK</div>
+</div>
+<div>
+<p class="font-semibold text-slate-900 dark:text-white text-sm">Dr. David Kim</p>
+<p class="text-xs text-slate-500">Oral Surgery</p>
+</div>
+</div>
+</td>
+<td class="py-4 px-6">
+<span class="text-sm font-mono text-slate-600 dark:text-slate-300">#ST-015</span>
+</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-2 text-slate-700 dark:text-slate-300 text-sm">
+<span class="material-symbols-outlined text-[18px] text-primary">dentistry</span>
+                                    Surgeon
+                                </div>
+</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-600">
+<span class="size-1.5 rounded-full bg-slate-400"></span>
+                                    Inactive
+                                </span>
+</td>
+<td class="py-4 px-6">
+<div class="flex flex-col text-sm">
+<span class="text-slate-700 dark:text-slate-300">david.k@ivydental.com</span>
+<span class="text-xs text-slate-500">+1 (555) 321-7654</span>
+</div>
+</td>
+<td class="py-4 px-6 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-500 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">edit_square</span>
+</button>
+<button class="p-2 rounded-lg hover:bg-red-50 dark:hover:bg-red-900/20 text-slate-500 hover:text-red-600 transition-colors">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="border-t border-slate-200 dark:border-slate-700 px-6 py-4 flex items-center justify-between">
+<p class="text-sm text-slate-500 dark:text-slate-400">
+                        Showing <span class="font-semibold text-slate-900 dark:text-white">1</span> to <span class="font-semibold text-slate-900 dark:text-white">4</span> of <span class="font-semibold text-slate-900 dark:text-white">12</span> results
+                    </p>
+<div class="flex gap-2">
+<button class="px-3 py-1.5 border border-slate-300 dark:border-slate-600 rounded-md text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 disabled:opacity-50 disabled:cursor-not-allowed" disabled="">
+                            Previous
+                        </button>
+<button class="px-3 py-1.5 border border-slate-300 dark:border-slate-600 rounded-md text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800">
+                            Next
+                        </button>
+</div>
+</div>
+</div>
+<footer class="mt-8 border-t border-slate-200 dark:border-slate-800 pt-6 pb-2">
+<div class="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500 dark:text-slate-400">
+<p>© 2023 Ivy Dental Clinic. All rights reserved.</p>
+<div class="flex gap-4">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<span>|</span>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+<span>|</span>
+<a class="hover:text-primary transition-colors" href="#">Support</a>
+</div>
+</div>
+</footer>
+</div>
+</main>
+</div>
+
+</body></html>

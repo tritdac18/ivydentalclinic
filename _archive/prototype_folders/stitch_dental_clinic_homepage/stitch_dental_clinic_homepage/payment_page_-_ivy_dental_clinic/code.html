@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Payment Page - Ivy Dental Clinic</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#136dec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#0d131b] dark:text-white font-display">
+<div class="flex min-h-screen w-full flex-row overflow-hidden">
+<!-- Sidebar -->
+<aside class="flex w-64 flex-col border-r border-[#e7ecf3] dark:border-slate-700 bg-white dark:bg-[#1a2634] hidden lg:flex">
+<div class="flex h-full flex-col justify-between p-4">
+<div class="flex flex-col gap-4">
+<div class="flex flex-col px-3 py-4">
+<h1 class="text-primary text-xl font-bold leading-normal flex items-center gap-2">
+<span class="material-symbols-outlined filled">dentistry</span>
+                        Ivy Dental
+                    </h1>
+<p class="text-[#4c6c9a] dark:text-slate-400 text-sm font-normal leading-normal">Clinic Management</p>
+</div>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f0f4f8] dark:hover:bg-slate-700 group transition-colors" href="#">
+<span class="material-symbols-outlined text-[#4c6c9a] group-hover:text-primary transition-colors">dashboard</span>
+<p class="text-[#0d131b] dark:text-slate-200 text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f0f4f8] dark:hover:bg-slate-700 group transition-colors" href="#">
+<span class="material-symbols-outlined text-[#4c6c9a] group-hover:text-primary transition-colors">person</span>
+<p class="text-[#0d131b] dark:text-slate-200 text-sm font-medium leading-normal">Patients</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f0f4f8] dark:hover:bg-slate-700 group transition-colors" href="#">
+<span class="material-symbols-outlined text-[#4c6c9a] group-hover:text-primary transition-colors">calendar_month</span>
+<p class="text-[#0d131b] dark:text-slate-200 text-sm font-medium leading-normal">Appointments</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 border border-primary/20" href="#">
+<span class="material-symbols-outlined text-primary fill-1">payments</span>
+<p class="text-primary text-sm font-medium leading-normal">Payments</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f0f4f8] dark:hover:bg-slate-700 group transition-colors" href="#">
+<span class="material-symbols-outlined text-[#4c6c9a] group-hover:text-primary transition-colors">settings</span>
+<p class="text-[#0d131b] dark:text-slate-200 text-sm font-medium leading-normal">Settings</p>
+</a>
+</div>
+</div>
+<div class="px-3">
+<div class="flex items-center gap-3 p-3 rounded-lg border border-[#e7ecf3] dark:border-slate-700 bg-slate-50 dark:bg-slate-800">
+<div class="size-8 rounded-full bg-cover bg-center" data-alt="User profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAxPnx4AqpGkX0ApaZFQgXGcvd-sGIHNCIuuoiZXsAUzhQMLNNabEEF8PnCSsUaC8ZmkR2BXnQWA1Yh4KIhLbEXXjB9sbRrVsF3ObfXb07san8UgxLPXi05MktsikaVxGQ6oTSOIejbRoSgF1gJwxRKY7ziZSEDbwdzNWiox2t6wYMakoSigVSBkibyEE9-aPLaajy0VBaTEpIXD0RRby_Q7enndklkjPMe5QpB3UPZawKnLU74tzHqaJo2jSvNCyj2uf-OZlcBMEkt");'></div>
+<div class="flex flex-col">
+<p class="text-xs font-bold text-[#0d131b] dark:text-white">Jane Doe</p>
+<p class="text-xs text-[#4c6c9a] dark:text-slate-400">Admin</p>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col min-w-0 overflow-y-auto">
+<!-- Top Navbar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[#e7ecf3] dark:border-slate-700 bg-white dark:bg-[#1a2634] px-6 lg:px-10 py-3 sticky top-0 z-10">
+<div class="flex items-center gap-4 text-[#0d131b] dark:text-white lg:hidden">
+<button class="p-1 rounded hover:bg-slate-100 dark:hover:bg-slate-700">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<div class="flex flex-col">
+<h2 class="text-[#0d131b] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Process Transaction</h2>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-700 text-[#4c6c9a] relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full border border-white dark:border-[#1a2634]"></span>
+</button>
+</div>
+</header>
+<!-- Page Content -->
+<div class="flex-1 p-6 lg:p-10 max-w-[1400px] mx-auto w-full">
+<!-- Breadcrumbs -->
+<div class="flex flex-wrap gap-2 pb-6 items-center">
+<a class="text-[#4c6c9a] dark:text-slate-400 text-sm font-medium hover:text-primary" href="#">Dashboard</a>
+<span class="text-[#4c6c9a] dark:text-slate-400 text-sm font-medium">/</span>
+<a class="text-[#4c6c9a] dark:text-slate-400 text-sm font-medium hover:text-primary" href="#">Payments</a>
+<span class="text-[#4c6c9a] dark:text-slate-400 text-sm font-medium">/</span>
+<span class="text-[#0d131b] dark:text-white text-sm font-medium">New Transaction</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Payment Form -->
+<div class="lg:col-span-7 flex flex-col gap-6">
+<!-- Section: Select Invoice -->
+<div class="bg-white dark:bg-[#1a2634] rounded-xl border border-[#e7ecf3] dark:border-slate-700 shadow-sm p-6">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-lg">receipt_long</span>
+<h3 class="text-lg font-bold text-[#0d131b] dark:text-white">Transaction Context</h3>
+</div>
+<div class="grid grid-cols-1 gap-4">
+<label class="flex flex-col flex-1">
+<p class="text-[#0d131b] dark:text-slate-200 text-sm font-medium leading-normal pb-2">Search Invoice ID or Patient Name</p>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-[#4c6c9a]">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</span>
+<select class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d131b] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/20 border border-[#cfd9e7] dark:border-slate-600 bg-slate-50 dark:bg-slate-800 focus:border-primary h-12 pl-11 pr-4 text-sm font-normal leading-normal appearance-none">
+<option disabled="" selected="" value="">Select an open invoice...</option>
+<option value="INV-0023">INV-0023 - Maria Clara (Root Canal)</option>
+<option value="INV-0024">INV-0024 - Juan Dela Cruz (Cleaning)</option>
+<option value="INV-0025">INV-0025 - Sarah Connor (Checkup)</option>
+</select>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 text-[#4c6c9a] pointer-events-none">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</span>
+</div>
+</label>
+<label class="flex flex-col flex-1">
+<p class="text-[#0d131b] dark:text-slate-200 text-sm font-medium leading-normal pb-2">Handling Staff</p>
+<div class="relative">
+<select class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d131b] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/20 border border-[#cfd9e7] dark:border-slate-600 bg-slate-50 dark:bg-slate-800 focus:border-primary h-12 px-4 text-sm font-normal leading-normal appearance-none">
+<option disabled="" selected="" value="">Select staff member</option>
+<option value="dr_smith">Dr. Smith</option>
+<option value="nurse_joy">Nurse Joy</option>
+<option value="admin_doe">Admin Doe</option>
+</select>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 text-[#4c6c9a] pointer-events-none">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Section: Payment Details -->
+<div class="bg-white dark:bg-[#1a2634] rounded-xl border border-[#e7ecf3] dark:border-slate-700 shadow-sm p-6">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-lg">credit_card</span>
+<h3 class="text-lg font-bold text-[#0d131b] dark:text-white">Payment Method</h3>
+</div>
+<!-- Method Tabs -->
+<div class="flex gap-4 mb-6">
+<label class="flex-1 cursor-pointer">
+<input checked="" class="peer sr-only" name="payment_method" type="radio"/>
+<div class="flex flex-col items-center justify-center p-4 rounded-xl border-2 border-[#e7ecf3] dark:border-slate-600 bg-slate-50 dark:bg-slate-800 peer-checked:border-primary peer-checked:bg-primary/5 transition-all hover:bg-slate-100 dark:hover:bg-slate-700">
+<span class="material-symbols-outlined text-2xl mb-2 text-[#4c6c9a] peer-checked:text-primary">payments</span>
+<span class="font-medium text-sm text-[#0d131b] dark:text-white peer-checked:text-primary">Cash Payment</span>
+</div>
+</label>
+<label class="flex-1 cursor-pointer">
+<input class="peer sr-only" name="payment_method" type="radio"/>
+<div class="flex flex-col items-center justify-center p-4 rounded-xl border-2 border-[#e7ecf3] dark:border-slate-600 bg-slate-50 dark:bg-slate-800 peer-checked:border-primary peer-checked:bg-primary/5 transition-all hover:bg-slate-100 dark:hover:bg-slate-700">
+<span class="material-symbols-outlined text-2xl mb-2 text-[#4c6c9a] peer-checked:text-primary">account_balance_wallet</span>
+<span class="font-medium text-sm text-[#0d131b] dark:text-white peer-checked:text-primary">E-Wallet</span>
+</div>
+</label>
+</div>
+<!-- Cash Fields -->
+<div class="flex flex-col gap-4">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<label class="flex flex-col flex-1">
+<p class="text-[#0d131b] dark:text-slate-200 text-sm font-medium leading-normal pb-2">Amount Received (₱)</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d131b] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/20 border border-[#cfd9e7] dark:border-slate-600 bg-white dark:bg-slate-900 focus:border-primary h-12 px-4 text-sm font-normal leading-normal" placeholder="0.00" type="number"/>
+</label>
+<label class="flex flex-col flex-1 opacity-60">
+<p class="text-[#0d131b] dark:text-slate-200 text-sm font-medium leading-normal pb-2">Change (₱)</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d131b] dark:text-white border border-[#cfd9e7] dark:border-slate-600 bg-slate-100 dark:bg-slate-800 h-12 px-4 text-sm font-normal leading-normal cursor-not-allowed" disabled="" placeholder="0.00" type="number"/>
+</label>
+</div>
+<!-- E-Wallet Conditional Fields (Simulated Visual Presence for Layout) -->
+<div class="hidden pt-4 border-t border-dashed border-[#e7ecf3] dark:border-slate-700 mt-2">
+<p class="text-xs font-semibold uppercase tracking-wider text-[#4c6c9a] mb-4">E-Wallet Details</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<label class="flex flex-col flex-1">
+<p class="text-[#0d131b] dark:text-slate-200 text-sm font-medium leading-normal pb-2">Provider</p>
+<div class="relative">
+<select class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d131b] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/20 border border-[#cfd9e7] dark:border-slate-600 bg-slate-50 dark:bg-slate-800 focus:border-primary h-12 px-4 text-sm font-normal leading-normal appearance-none">
+<option value="gcash">GCash</option>
+<option value="paymaya">PayMaya (Maya)</option>
+</select>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 text-[#4c6c9a] pointer-events-none">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</span>
+</div>
+</label>
+<label class="flex flex-col flex-1">
+<p class="text-[#0d131b] dark:text-slate-200 text-sm font-medium leading-normal pb-2">Reference Number</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d131b] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/20 border border-[#cfd9e7] dark:border-slate-600 bg-white dark:bg-slate-900 focus:border-primary h-12 px-4 text-sm font-normal leading-normal" placeholder="e.g. 100293844" type="text"/>
+</label>
+</div>
+</div>
+<label class="flex flex-col flex-1 mt-2">
+<p class="text-[#0d131b] dark:text-slate-200 text-sm font-medium leading-normal pb-2">Notes (Optional)</p>
+<textarea class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d131b] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/20 border border-[#cfd9e7] dark:border-slate-600 bg-white dark:bg-slate-900 focus:border-primary p-4 text-sm font-normal leading-normal" placeholder="Add any remarks here..." rows="3"></textarea>
+</label>
+</div>
+</div>
+</div>
+<!-- Right Column: Invoice Preview -->
+<div class="lg:col-span-5 flex flex-col h-full">
+<div class="bg-white dark:bg-[#1a2634] rounded-xl border border-[#e7ecf3] dark:border-slate-700 shadow-sm overflow-hidden flex flex-col h-full max-h-[calc(100vh-140px)] sticky top-24">
+<div class="p-6 border-b border-[#e7ecf3] dark:border-slate-700 bg-slate-50 dark:bg-[#1f2d3d] flex justify-between items-start">
+<div>
+<h3 class="text-sm font-bold text-[#4c6c9a] uppercase tracking-wide">Invoice Details</h3>
+<p class="text-2xl font-bold text-[#0d131b] dark:text-white mt-1">#INV-0023</p>
+</div>
+<span class="px-3 py-1 rounded-full bg-yellow-100 text-yellow-800 text-xs font-bold border border-yellow-200">Pending Payment</span>
+</div>
+<div class="p-6 flex-1 overflow-y-auto">
+<!-- Patient Info -->
+<div class="flex items-center gap-4 mb-6 pb-6 border-b border-[#e7ecf3] dark:border-slate-700">
+<div class="size-12 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center text-primary font-bold text-lg">MC</div>
+<div>
+<p class="text-sm text-[#4c6c9a]">Patient Name</p>
+<p class="text-base font-bold text-[#0d131b] dark:text-white">Maria Clara</p>
+<p class="text-xs text-[#4c6c9a]">ID: PAT-2023-882</p>
+</div>
+</div>
+<!-- Line Items -->
+<div class="flex flex-col gap-4">
+<p class="text-sm font-semibold text-[#0d131b] dark:text-white">Services Rendered</p>
+<div class="flex justify-between items-center text-sm">
+<div class="flex flex-col">
+<span class="text-[#0d131b] dark:text-slate-200 font-medium">Root Canal Treatment</span>
+<span class="text-[#4c6c9a] text-xs">Tooth #14</span>
+</div>
+<span class="text-[#0d131b] dark:text-slate-200 font-medium">₱ 4,500.00</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<div class="flex flex-col">
+<span class="text-[#0d131b] dark:text-slate-200 font-medium">Consultation Fee</span>
+<span class="text-[#4c6c9a] text-xs">Standard</span>
+</div>
+<span class="text-[#0d131b] dark:text-slate-200 font-medium">₱ 500.00</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<div class="flex flex-col">
+<span class="text-[#0d131b] dark:text-slate-200 font-medium">X-Ray (Periapical)</span>
+<span class="text-[#4c6c9a] text-xs">Diagnostic</span>
+</div>
+<span class="text-[#0d131b] dark:text-slate-200 font-medium">₱ 500.00</span>
+</div>
+</div>
+<div class="my-6 border-t border-dashed border-[#e7ecf3] dark:border-slate-700"></div>
+<!-- Totals -->
+<div class="flex flex-col gap-2">
+<div class="flex justify-between text-sm text-[#4c6c9a]">
+<span>Subtotal</span>
+<span>₱ 5,500.00</span>
+</div>
+<div class="flex justify-between text-sm text-[#4c6c9a]">
+<span>VAT (12%)</span>
+<span>Included</span>
+</div>
+<div class="flex justify-between text-lg font-bold text-primary mt-2 pt-2 border-t border-[#e7ecf3] dark:border-slate-700">
+<span>Total Amount Due</span>
+<span>₱ 5,500.00</span>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="p-6 bg-slate-50 dark:bg-[#1f2d3d] border-t border-[#e7ecf3] dark:border-slate-700">
+<button class="w-full flex items-center justify-center gap-2 bg-primary hover:bg-blue-600 text-white font-bold py-3.5 px-4 rounded-lg transition-colors shadow-sm shadow-blue-200 dark:shadow-none mb-3">
+<span class="material-symbols-outlined">check_circle</span>
+                                Confirm Payment
+                            </button>
+<button class="w-full bg-white dark:bg-transparent hover:bg-slate-50 dark:hover:bg-slate-800 text-[#4c6c9a] dark:text-slate-400 font-medium py-3 px-4 rounded-lg border border-[#e7ecf3] dark:border-slate-600 transition-colors">
+                                Cancel Transaction
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

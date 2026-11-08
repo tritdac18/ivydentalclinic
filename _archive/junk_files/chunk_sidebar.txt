@@ -1,0 +1,60 @@
+<aside class="w-64 bg-white dark:bg-[#1a2634] border-r border-[#e7ecf3] dark:border-slate-700 hidden lg:flex flex-col fixed h-full z-20">
+<div class="h-16 flex items-center px-6 border-b border-[#e7ecf3] dark:border-slate-700">
+<div class="flex items-center gap-3">
+<div class="size-8 text-primary">
+<span class="material-symbols-outlined text-3xl">dentistry</span>
+</div>
+<div>
+<h2 class="text-[#0d131b] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Ivy Dental Clinic</h2>
+<p class="text-xs font-semibold text-[#4c6c9a] dark:text-slate-400"><?php echo $is_admin ? 'Admin Portal' : 'Patient Portal'; ?></p>
+</div>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-1 flex-1 overflow-y-auto">
+<?php if ($is_admin): ?>
+<a class="flex items-center gap-3 px-4 py-3 text-[#4c6c9a] dark:text-slate-400 hover:bg-[#f0f4f8] dark:hover:bg-slate-800 rounded-lg transition-colors" href="admin_dashboard.php">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-bold">Dashboard</span>
+</a>
+<?php else: ?>
+<a class="flex items-center gap-3 px-4 py-3 text-[#4c6c9a] dark:text-slate-400 hover:bg-[#f0f4f8] dark:hover:bg-slate-800 rounded-lg transition-colors" href="landing.php">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-bold">Dashboard</span>
+</a>
+<?php endif; ?>
+<a class="flex items-center gap-3 px-4 py-3 bg-primary/10 text-primary rounded-lg transition-colors" href="profile.php">
+<span class="material-symbols-outlined fill-1">person</span>
+<span class="text-sm font-bold">Profile</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#4c6c9a] dark:text-slate-400 hover:bg-[#f0f4f8] dark:hover:bg-slate-800 rounded-lg transition-colors" href="appointments.php">
+<span class="material-symbols-outlined fill-1">calendar_month</span>
+<span class="text-sm font-bold">Appointments</span>
+</a>
+<?php if (!$is_admin): ?>
+<a class="flex items-center gap-3 px-4 py-3 text-[#4c6c9a] dark:text-slate-400 hover:bg-[#f0f4f8] dark:hover:bg-slate-800 rounded-lg transition-colors" href="customer_reports.php">
+<span class="material-symbols-outlined fill-1">description</span>
+<span class="text-sm font-bold">Reports</span>
+</a>
+<?php endif; ?>
+<?php if ($is_admin): ?>
+<a class="flex items-center gap-3 px-4 py-3 text-[#4c6c9a] dark:text-slate-400 hover:bg-[#f0f4f8] dark:hover:bg-slate-800 rounded-lg transition-colors" href="invoices.php">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="text-sm font-bold">Invoices</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#4c6c9a] dark:text-slate-400 hover:bg-[#f0f4f8] dark:hover:bg-slate-800 rounded-lg transition-colors" href="payments.php">
+<span class="material-symbols-outlined">payments</span>
+<span class="text-sm font-bold">Payments</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#4c6c9a] dark:text-slate-400 hover:bg-[#f0f4f8] dark:hover:bg-slate-800 rounded-lg transition-colors" href="reports.php">
+<span class="material-symbols-outlined fill-1">description</span>
+<span class="text-sm font-bold">Reports</span>
+</a>
+<?php endif; ?>
+</div>
+<div class="p-4 border-t border-[#e7ecf3] dark:border-slate-700">
+<a class="flex items-center gap-3 px-4 py-3 text-[#4c6c9a] dark:text-slate-400 hover:text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 dark:hover:text-red-400 rounded-lg transition-colors group" href="#" onclick="confirmLogout(event)">
+<span class="material-symbols-outlined group-hover:text-red-600 dark:group-hover:text-red-400">logout</span>
+<span class="text-sm font-bold">Log Out</span>
+</a>
+</div>
+</aside>

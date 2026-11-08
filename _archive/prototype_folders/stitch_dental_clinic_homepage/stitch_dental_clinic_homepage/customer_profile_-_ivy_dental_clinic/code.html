@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Customer Profile - Ivy Dental Clinic</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#136dec",
+                        "primary-dark": "#0f5bbd",
+                        "secondary": "#10b981", // Green accent
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a2430",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased overflow-x-hidden">
+<div class="flex h-screen w-full overflow-hidden">
+<aside class="flex w-72 flex-col border-r border-slate-200 bg-surface-light dark:border-slate-800 dark:bg-surface-dark hidden md:flex">
+<div class="flex h-full flex-col justify-between p-4">
+<div class="flex flex-col gap-8">
+<div class="flex items-center gap-3 px-2">
+<div class="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-secondary text-white shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-2xl">dentistry</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-slate-900 dark:text-white text-base font-bold leading-normal">Ivy Dental Clinic</h1>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-normal leading-normal">Patient Portal</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-slate-600 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 rounded-lg bg-primary/10 px-3 py-2 text-primary dark:bg-primary/20 dark:text-blue-300" href="#">
+<span class="material-symbols-outlined icon-filled text-2xl">person</span>
+<span class="text-sm font-medium">Profile</span>
+</a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-slate-600 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl">calendar_month</span>
+<span class="text-sm font-medium">Appointments</span>
+</a>
+</nav>
+</div>
+<div class="flex items-center gap-3 rounded-lg border border-slate-200 bg-slate-50 p-3 dark:border-slate-700 dark:bg-slate-800/50">
+<div class="h-10 w-10 overflow-hidden rounded-full bg-slate-200 bg-cover bg-center" data-alt="Portrait of Sarah Jenkins" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAYh2epabQO8_mg_wTwv6Jl9Pf2J9GELOheZnEnsVr5Qcv-52C0Vi8Pp9f-KEb5HtghJDnWg4PtR4EyivcFlsrb8AkrykMTNYGTBWmAKcaXrQw_TFECob-nzP1Mx6mQc3ZuoVRakcBod6LXU7O9KH1cowJkSOLkvqaJIGXido0R4VJbnqkgGWdf5GGoHkh_KQJG3ttCdq71cRCUjaqiPQCKW1uKAxxVthhs9uMdI4zbBjQVyReT9vLQ1bk_ML6o_RdM33By23w5YpHL");'></div>
+<div class="flex flex-1 flex-col overflow-hidden">
+<p class="truncate text-sm font-medium text-slate-900 dark:text-white">Sarah Jenkins</p>
+<p class="truncate text-xs text-slate-500 dark:text-slate-400">ID #89201</p>
+</div>
+<button class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-300" title="Logout">
+<span class="material-symbols-outlined text-xl">logout</span>
+</button>
+</div>
+</div>
+</aside>
+<main class="flex h-full flex-1 flex-col overflow-y-auto bg-background-light dark:bg-background-dark">
+<div class="flex items-center justify-between border-b border-slate-200 bg-surface-light p-4 dark:border-slate-800 dark:bg-surface-dark md:hidden">
+<div class="flex items-center gap-3">
+<div class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-white">
+<span class="material-symbols-outlined text-lg">dentistry</span>
+</div>
+<span class="font-bold text-slate-900 dark:text-white">Ivy Dental Clinic</span>
+</div>
+<button class="text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<div class="flex flex-1 justify-center py-8 px-4 md:px-8 lg:px-12">
+<div class="flex w-full max-w-5xl flex-col gap-8">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-2 text-sm">
+<a class="font-medium text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-blue-300" href="#">Home</a>
+<span class="text-slate-400 dark:text-slate-600">/</span>
+<span class="font-medium text-slate-900 dark:text-white">Profile</span>
+</div>
+<div class="flex flex-wrap items-end justify-between gap-4">
+<div>
+<h1 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Customer Profile</h1>
+<p class="mt-2 text-slate-500 dark:text-slate-400">Manage your personal information and view your history.</p>
+</div>
+<div class="flex gap-3">
+<button class="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white shadow-md shadow-blue-500/20 hover:bg-primary-dark transition-all">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+<span>Edit Profile</span>
+</button>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
+<div class="lg:col-span-2 flex flex-col gap-6">
+<div class="rounded-xl border border-slate-200 bg-surface-light shadow-sm dark:border-slate-800 dark:bg-surface-dark">
+<div class="flex items-center justify-between border-b border-slate-200 px-6 py-4 dark:border-slate-700">
+<div class="flex items-center gap-3">
+<div class="rounded-full bg-blue-50 p-2 text-primary dark:bg-blue-900/30 dark:text-blue-300">
+<span class="material-symbols-outlined">badge</span>
+</div>
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Personal Information</h3>
+</div>
+</div>
+<div class="p-6">
+<div class="grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2">
+<div class="col-span-1">
+<label class="mb-1 block text-sm font-medium text-slate-500 dark:text-slate-400">First Name</label>
+<div class="text-base font-medium text-slate-900 dark:text-white">Sarah</div>
+</div>
+<div class="col-span-1">
+<label class="mb-1 block text-sm font-medium text-slate-500 dark:text-slate-400">Last Name</label>
+<div class="text-base font-medium text-slate-900 dark:text-white">Jenkins</div>
+</div>
+<div class="col-span-1 border-t border-slate-100 pt-4 dark:border-slate-700/50">
+<label class="mb-1 block text-sm font-medium text-slate-500 dark:text-slate-400">Date of Birth</label>
+<div class="text-base font-medium text-slate-900 dark:text-white">April 12, 1985</div>
+</div>
+<div class="col-span-1 border-t border-slate-100 pt-4 dark:border-slate-700/50">
+<label class="mb-1 block text-sm font-medium text-slate-500 dark:text-slate-400">Phone Number</label>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-slate-400">call</span>
+<span class="text-base font-medium text-slate-900 dark:text-white">(555) 123-4567</span>
+</div>
+</div>
+<div class="col-span-1 sm:col-span-2 border-t border-slate-100 pt-4 dark:border-slate-700/50">
+<label class="mb-1 block text-sm font-medium text-slate-500 dark:text-slate-400">Email Address</label>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-slate-400">mail</span>
+<span class="text-base font-medium text-slate-900 dark:text-white">sarah.jenkins@example.com</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-1">
+<div class="flex h-full flex-col rounded-xl border border-slate-200 bg-surface-light shadow-sm dark:border-slate-800 dark:bg-surface-dark">
+<div class="flex items-center justify-between border-b border-slate-200 px-6 py-4 dark:border-slate-700">
+<div class="flex items-center gap-3">
+<div class="rounded-full bg-teal-50 p-2 text-teal-600 dark:bg-teal-900/30 dark:text-teal-300">
+<span class="material-symbols-outlined">history</span>
+</div>
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Medical History</h3>
+</div>
+</div>
+<div class="flex flex-1 flex-col items-center justify-center p-8 text-center min-h-[300px]">
+<div class="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-slate-50 dark:bg-slate-800">
+<span class="material-symbols-outlined text-[40px] text-slate-300 dark:text-slate-600">medical_services</span>
+</div>
+<h4 class="mb-2 text-lg font-bold text-slate-900 dark:text-white">Not Yet Featured</h4>
+<p class="mb-6 text-sm text-slate-500 dark:text-slate-400">
+                                    Your detailed medical history records are currently being digitized and verified by our staff.
+                                </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

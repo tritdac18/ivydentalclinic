@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Staff Portal Overview - Ivy Dental Clinic</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#136dec",
+              "primary-dark": "#0f5bbd",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101822",
+              "surface-light": "#ffffff",
+              "surface-dark": "#1e293b",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased selection:bg-primary/20 selection:text-primary">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-gray-200 dark:border-gray-800 bg-surface-light dark:bg-surface-dark px-4 py-3 shadow-sm lg:px-8">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3 text-slate-900 dark:text-white">
+<div class="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-3xl">dentistry</span>
+</div>
+<h2 class="hidden text-lg font-bold leading-tight tracking-tight md:block">Dental Staff Portal</h2>
+</div>
+<label class="hidden md:flex flex-col min-w-40 h-10 w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full bg-background-light dark:bg-gray-800 border border-transparent focus-within:border-primary/50 transition-colors">
+<div class="flex items-center justify-center pl-3 text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg bg-transparent px-3 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-500 focus:outline-none" placeholder="Search schedule..."/>
+</div>
+</label>
+</div>
+<div class="flex items-center justify-end gap-4 lg:gap-8">
+<nav class="hidden lg:flex items-center gap-6">
+<a class="text-slate-900 dark:text-slate-100 text-sm font-medium hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-slate-500 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors" href="#">Schedule</a>
+<a class="text-slate-500 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors" href="#">Patients</a>
+</nav>
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-gray-200 dark:bg-gray-700 bg-cover bg-center border-2 border-white dark:border-gray-800 shadow-sm cursor-pointer" data-alt="Portrait of a female dental staff member smiling" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDuCehUbjex1J_pP_jnt2bHYfm7MwGCenvU3iFHDrpQO6MlVZLHcSm81vZ4wUt1pjNoq2kpC6WEzYdsmwmNxM4Ta1bxC965mRDUDqBqkd_j7xptzEJLXLG48vGomvaupRpB1GC5u4JGl2jmdMVsXxgyKx1STw57qJT6srw1Cl_vomalCphdMVIgxoLArdvzwVjH4ud2sCAwgJzAHMJVhu5S2Z_Z92h6Ge3peO0b9tONUykn-42jePvKr_vywFGUXTbSzP9c7Gy1GfWV");'>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1 px-4 py-8 lg:px-8 mx-auto w-full max-w-7xl">
+<div class="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+<div>
+<h1 class="text-3xl font-black tracking-tight text-slate-900 dark:text-white lg:text-4xl">Good Morning, Sarah</h1>
+<p class="mt-2 text-base text-slate-500 dark:text-slate-400">Here is today's overview for the clinic floor.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex h-10 items-center justify-center rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-4 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+<span class="material-symbols-outlined mr-2 text-[20px]">add_circle</span>
+<span>New Appointment</span>
+</button>
+<button class="flex h-10 items-center justify-center rounded-lg bg-primary px-4 text-sm font-bold text-white shadow-md shadow-blue-500/20 hover:bg-primary-dark transition-colors">
+<span class="material-symbols-outlined mr-2 text-[20px]">how_to_reg</span>
+<span>Check-in Patient</span>
+</button>
+</div>
+</div>
+<div class="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+<div class="flex flex-col gap-1 rounded-xl border border-gray-200 dark:border-gray-800 bg-surface-light dark:bg-surface-dark p-5 shadow-sm">
+<div class="flex items-center gap-2 mb-2">
+<div class="flex h-8 w-8 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900/30 text-primary">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+</div>
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400">Appointments Today</p>
+</div>
+<p class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">24</p>
+<div class="flex items-center text-xs font-medium text-emerald-600 dark:text-emerald-400">
+<span class="material-symbols-outlined mr-1 text-[16px]">trending_up</span>
+<span>12% more than yesterday</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 rounded-xl border border-gray-200 dark:border-gray-800 bg-surface-light dark:bg-surface-dark p-5 shadow-sm">
+<div class="flex items-center gap-2 mb-2">
+<div class="flex h-8 w-8 items-center justify-center rounded-full bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400">
+<span class="material-symbols-outlined text-[20px]">hourglass_empty</span>
+</div>
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400">Patients Waiting</p>
+</div>
+<div class="flex items-end gap-2">
+<p class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">3</p>
+<span class="mb-1 text-xs font-medium text-emerald-600 dark:text-emerald-400 bg-emerald-100 dark:bg-emerald-900/30 px-2 py-0.5 rounded-full">+1 Just arrived</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 rounded-xl border border-gray-200 dark:border-gray-800 bg-surface-light dark:bg-surface-dark p-5 shadow-sm">
+<div class="flex items-center gap-2 mb-2">
+<div class="flex h-8 w-8 items-center justify-center rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400">
+<span class="material-symbols-outlined text-[20px]">stethoscope</span>
+</div>
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400">Doctors on Duty</p>
+</div>
+<p class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">5</p>
+<p class="text-xs text-slate-400 dark:text-slate-500">Dr. Smith, Dr. Jones +3 others</p>
+</div>
+<div class="flex flex-col gap-1 rounded-xl border border-gray-200 dark:border-gray-800 bg-surface-light dark:bg-surface-dark p-5 shadow-sm">
+<div class="flex items-center gap-2 mb-2">
+<div class="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+</div>
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400">Daily Revenue</p>
+</div>
+<p class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">$4,250</p>
+<p class="text-xs text-slate-400 dark:text-slate-500">8 invoices processed today</p>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+<div class="flex flex-col gap-8 lg:col-span-2">
+<div class="flex flex-col overflow-hidden rounded-xl border border-gray-200 dark:border-gray-800 bg-surface-light dark:bg-surface-dark shadow-sm">
+<div class="flex items-center justify-between border-b border-gray-100 dark:border-gray-800 px-6 py-4">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Live Patient Queue</h3>
+<button class="text-sm font-medium text-primary hover:text-primary-dark">View All</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left text-sm text-slate-600 dark:text-slate-300">
+<thead class="bg-gray-50 dark:bg-gray-800/50 text-xs uppercase text-slate-500 dark:text-slate-400">
+<tr>
+<th class="px-6 py-3 font-semibold">Patient Name</th>
+<th class="px-6 py-3 font-semibold">Doctor</th>
+<th class="px-6 py-3 font-semibold">Status</th>
+<th class="px-6 py-3 font-semibold">Wait Time</th>
+<th class="px-6 py-3 font-semibold text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-100 dark:divide-gray-800">
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<td class="px-6 py-4 font-medium text-slate-900 dark:text-white">
+<div class="flex items-center gap-3">
+<div class="h-8 w-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-xs">AJ</div>
+                                                Alice Johnson
+                                            </div>
+</td>
+<td class="px-6 py-4">Dr. Smith</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center rounded-full bg-orange-100 dark:bg-orange-900/30 px-2.5 py-0.5 text-xs font-medium text-orange-800 dark:text-orange-300">
+                                                Waiting
+                                            </span>
+</td>
+<td class="px-6 py-4 font-mono text-orange-600 dark:text-orange-400">10m</td>
+<td class="px-6 py-4 text-right">
+<button class="text-sm font-bold text-primary hover:text-primary-dark">Check-in</button>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<td class="px-6 py-4 font-medium text-slate-900 dark:text-white">
+<div class="flex items-center gap-3">
+<div class="h-8 w-8 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-xs">BW</div>
+                                                Bob Williams
+                                            </div>
+</td>
+<td class="px-6 py-4">Dr. Jones</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center rounded-full bg-blue-100 dark:bg-blue-900/30 px-2.5 py-0.5 text-xs font-medium text-blue-800 dark:text-blue-300">
+                                                In Chair
+                                            </span>
+</td>
+<td class="px-6 py-4 text-slate-400">-</td>
+<td class="px-6 py-4 text-right">
+<button class="text-sm font-bold text-slate-500 hover:text-primary">Details</button>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<td class="px-6 py-4 font-medium text-slate-900 dark:text-white">
+<div class="flex items-center gap-3">
+<div class="h-8 w-8 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center font-bold text-xs">CE</div>
+                                                Clara Evans
+                                            </div>
+</td>
+<td class="px-6 py-4">Dr. Smith</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center rounded-full bg-emerald-100 dark:bg-emerald-900/30 px-2.5 py-0.5 text-xs font-medium text-emerald-800 dark:text-emerald-300">
+                                                Completed
+                                            </span>
+</td>
+<td class="px-6 py-4 text-slate-400">-</td>
+<td class="px-6 py-4 text-right">
+<button class="text-sm font-bold text-primary hover:text-primary-dark">Discharge</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="flex flex-col rounded-xl border border-gray-200 dark:border-gray-800 bg-surface-light dark:bg-surface-dark shadow-sm">
+<div class="flex items-center justify-between border-b border-gray-100 dark:border-gray-800 px-6 py-4">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Upcoming Appointments</h3>
+<div class="flex gap-2">
+<button class="h-8 w-8 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-slate-500">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</button>
+<button class="h-8 w-8 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-slate-500">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col divide-y divide-gray-100 dark:divide-gray-800">
+<div class="group flex items-center gap-4 px-6 py-4 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors cursor-pointer">
+<div class="flex flex-col items-center justify-center rounded-lg bg-gray-50 dark:bg-gray-800 h-14 w-14 border border-gray-200 dark:border-gray-700">
+<span class="text-xs font-bold text-slate-500">11:30</span>
+<span class="text-xs text-slate-400">AM</span>
+</div>
+<div class="flex-1">
+<h4 class="font-semibold text-slate-900 dark:text-white">Michael Brown</h4>
+<p class="text-sm text-slate-500 dark:text-slate-400">Root Canal Treatment • Room 3</p>
+</div>
+<div class="flex items-center gap-3">
+<div class="hidden sm:block text-right">
+<p class="text-sm font-medium text-slate-900 dark:text-white">Dr. Emily White</p>
+<p class="text-xs text-slate-400">Endodontist</p>
+</div>
+<button class="h-8 w-8 flex items-center justify-center rounded-full text-slate-400 hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</div>
+<div class="group flex items-center gap-4 px-6 py-4 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors cursor-pointer">
+<div class="flex flex-col items-center justify-center rounded-lg bg-gray-50 dark:bg-gray-800 h-14 w-14 border border-gray-200 dark:border-gray-700">
+<span class="text-xs font-bold text-slate-500">01:00</span>
+<span class="text-xs text-slate-400">PM</span>
+</div>
+<div class="flex-1">
+<h4 class="font-semibold text-slate-900 dark:text-white">Sarah Davis</h4>
+<p class="text-sm text-slate-500 dark:text-slate-400">Routine Cleaning • Room 1</p>
+</div>
+<div class="flex items-center gap-3">
+<div class="hidden sm:block text-right">
+<p class="text-sm font-medium text-slate-900 dark:text-white">Dr. Smith</p>
+<p class="text-xs text-slate-400">Hygienist</p>
+</div>
+<button class="h-8 w-8 flex items-center justify-center rounded-full text-slate-400 hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</div>
+<div class="group flex items-center gap-4 px-6 py-4 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors cursor-pointer">
+<div class="flex flex-col items-center justify-center rounded-lg bg-gray-50 dark:bg-gray-800 h-14 w-14 border border-gray-200 dark:border-gray-700">
+<span class="text-xs font-bold text-slate-500">02:15</span>
+<span class="text-xs text-slate-400">PM</span>
+</div>
+<div class="flex-1">
+<h4 class="font-semibold text-slate-900 dark:text-white">James Wilson</h4>
+<p class="text-sm text-slate-500 dark:text-slate-400">Whitening Consultation • Room 2</p>
+</div>
+<div class="flex items-center gap-3">
+<div class="hidden sm:block text-right">
+<p class="text-sm font-medium text-slate-900 dark:text-white">Dr. Jones</p>
+<p class="text-xs text-slate-400">General Dentist</p>
+</div>
+<button class="h-8 w-8 flex items-center justify-center rounded-full text-slate-400 hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-100 dark:border-gray-800 p-3">
+<button class="w-full rounded-lg py-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">View Full Schedule</button>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-8 lg:col-span-1">
+<div class="flex flex-col rounded-xl border border-gray-200 dark:border-gray-800 bg-surface-light dark:bg-surface-dark shadow-sm h-fit">
+<div class="flex items-center gap-3 border-b border-gray-100 dark:border-gray-800 px-5 py-4 bg-primary/5 rounded-t-xl">
+<span class="material-symbols-outlined text-primary">campaign</span>
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Staff Bulletin</h3>
+</div>
+<div class="flex flex-col p-5 gap-5">
+<div class="flex gap-3">
+<div class="flex-shrink-0 mt-1">
+<div class="h-2 w-2 rounded-full bg-red-500"></div>
+</div>
+<div>
+<h4 class="text-sm font-bold text-slate-900 dark:text-white">Monthly Staff Meeting</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1 line-clamp-2">Everyone please gather in the break room at 2 PM today for the monthly sync. Dr. Smith will be presenting.</p>
+<p class="text-[10px] text-slate-400 mt-2">Posted 2 hours ago</p>
+</div>
+</div>
+<div class="flex gap-3">
+<div class="flex-shrink-0 mt-1">
+<div class="h-2 w-2 rounded-full bg-primary"></div>
+</div>
+<div>
+<h4 class="text-sm font-bold text-slate-900 dark:text-white">New Inventory Protocol</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1 line-clamp-2">Please review the new scanning procedure for restocking supplies in the sterilization room.</p>
+<p class="text-[10px] text-slate-400 mt-2">Posted yesterday</p>
+</div>
+</div>
+</div>
+<div class="p-3 border-t border-gray-100 dark:border-gray-800">
+<button class="w-full flex items-center justify-center gap-2 rounded-lg py-2 text-sm font-medium text-primary hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                                Post Announcement
+                             </button>
+</div>
+</div>
+<div class="flex flex-col rounded-xl border border-gray-200 dark:border-gray-800 bg-surface-light dark:bg-surface-dark shadow-sm">
+<div class="px-5 py-4 border-b border-gray-100 dark:border-gray-800">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Staff Status</h3>
+</div>
+<div class="p-2">
+<div class="flex items-center justify-between p-3 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="relative">
+<div class="h-10 w-10 rounded-full bg-gray-200 bg-cover bg-center" data-alt="Dr. Smith avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB7R-3skGohfSbFAZPOZasuK3_6Mj2WtI_9ITlQyNsvufXh3wo4azUDuSZRCIScfd2MAwk1WH4CDse2kx-DoK1WDw5zkghBNBhTIf_xCXmcWvo8diaXnQD99pV2S_czONt4NfDNIc2V_25IuD5OcpLzsI2KgfgYyBoBvq43eN-KUVKOadwKFX0MFLJu8Ggk7hNglmhu9AiiQEqjb3LV9y3O7qsLhOWtF41-8oKnx8ktHdrdfoi3r3cCNWU2VMHXSzvUoF73BdX95oGE");'></div>
+<span class="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-emerald-500 border-2 border-white dark:border-gray-900"></span>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-900 dark:text-white">Dr. Smith</p>
+<p class="text-xs text-slate-500">Available</p>
+</div>
+</div>
+<button class="h-8 w-8 flex items-center justify-center rounded-full text-slate-400 hover:bg-white dark:hover:bg-gray-700 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">chat_bubble</span>
+</button>
+</div>
+<div class="flex items-center justify-between p-3 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="relative">
+<div class="h-10 w-10 rounded-full bg-gray-200 bg-cover bg-center" data-alt="Dr. Jones avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBHks89uiZ6S0gWh5NIwCekffAr_uAyaXsgNQ-QkawHcvjHzNzwW3ZFLla6zDMB960BktWiVO86Guv7fLbLbnFtRJ1jYoLU-qC_5slgTlboHMdvsOnxK0oaYQZS0sf6sXi5CwJMHKvLZ8o2jbeMZ15w9cPsxGtdILJEVZ-a04BzO7n54jIMWqa_X7v94w2XcZ0W8hDGIBYd9VbzQrjUe6gPn3X4bP8Fe1cFR7VhXyC9Q1AW0EJwdhiI9pYQsX7m8bExRGd1tYYv86Y2");'></div>
+<span class="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-red-500 border-2 border-white dark:border-gray-900"></span>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-900 dark:text-white">Dr. Jones</p>
+<p class="text-xs text-slate-500">In Surgery</p>
+</div>
+</div>
+<button class="h-8 w-8 flex items-center justify-center rounded-full text-slate-400 hover:bg-white dark:hover:bg-gray-700 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">chat_bubble</span>
+</button>
+</div>
+<div class="flex items-center justify-between p-3 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="relative">
+<div class="h-10 w-10 rounded-full bg-gray-200 bg-cover bg-center" data-alt="Hygienist avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuANQSIwQOWKT7aag7LRrV-hB9YUcDOGWXFqwMbCWH3g_iopH5LaiXnGgGJDWZqdsyidyAzHE0iviszyl-EG3D8MnZQ6EIYoq1HIAmKu09QA4jXfLHd1NK-GQw7VYKBs413XeeF85lmwSZqLQktjpv6Rq-uqvOzBVKE_zQ9Aug846AZYS5Byq5cYvcIBAza0daiYjhbM5H5YO9tK5OMkAFcviw0HtFp4jOeRwvVimJ1mB5tLQp1CX4G5DNvQC-HiycWF260jDJmBabta");'></div>
+<span class="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-emerald-500 border-2 border-white dark:border-gray-900"></span>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-900 dark:text-white">Nurse Betty</p>
+<p class="text-xs text-slate-500">Available</p>
+</div>
+</div>
+<button class="h-8 w-8 flex items-center justify-center rounded-full text-slate-400 hover:bg-white dark:hover:bg-gray-700 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">chat_bubble</span>
+</button>
+</div>
+</div>
+</div>
+<div class="rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 p-6 text-white shadow-lg">
+<div class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-white/20">
+<span class="material-symbols-outlined text-2xl">point_of_sale</span>
+</div>
+<h3 class="mb-1 text-lg font-bold">Payment Terminal</h3>
+<p class="mb-4 text-sm text-emerald-50">Process patient payments, manage invoices, and handle claims.</p>
+<button class="w-full rounded-lg bg-white py-2 text-sm font-bold text-emerald-600 hover:bg-emerald-50 transition-colors">
+                            Process Payment
+                        </button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

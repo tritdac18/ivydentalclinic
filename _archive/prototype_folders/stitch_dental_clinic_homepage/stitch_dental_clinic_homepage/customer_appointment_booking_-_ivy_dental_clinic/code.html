@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>General Booking - Ivy Dental Clinic</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#136dec",
+                        "primary-dark": "#0e52b5",
+                        "accent-green": "#10b981",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a2430",
+                        "text-main-light": "#0d131b",
+                        "text-main-dark": "#e2e8f0",
+                        "text-sub-light": "#4c6c9a",
+                        "text-sub-dark": "#94a3b8",
+                        "border-light": "#e7ecf3",
+                        "border-dark": "#2d3748",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .active-step { background-color: #136dec; color: white; border-color: #136dec; }
+        .completed-step { background-color: #dbeafe; color: #136dec; border-color: #136dec; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main-light dark:text-text-main-dark min-h-screen flex flex-col font-display">
+<header class="sticky top-0 z-50 bg-surface-light dark:bg-surface-dark border-b border-border-light dark:border-border-dark px-4 md:px-10 py-3 shadow-sm transition-colors duration-200">
+<div class="max-w-[1440px] mx-auto w-full flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="text-primary size-8">
+<span class="material-symbols-outlined text-3xl">dentistry</span>
+</div>
+<h2 class="text-text-main-light dark:text-white text-lg font-bold tracking-tight">Ivy Dental Clinic</h2>
+</div>
+<nav class="hidden md:flex flex-1 justify-center gap-8">
+<a class="text-text-main-light dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium" href="#">Dashboard</a>
+<a class="text-text-main-light dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium" href="#">Patients</a>
+<a class="text-text-main-light dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium" href="#">Schedule</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 text-text-sub-light hover:text-primary transition-colors text-sm font-medium">
+<span class="material-symbols-outlined text-xl">arrow_back</span>
+<span>Go Back to Dashboard</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-1 w-full max-w-[1440px] mx-auto px-4 md:px-10 py-8 flex flex-col gap-6">
+<div class="flex justify-between items-end mb-4">
+<div>
+<h1 class="text-3xl md:text-4xl font-black text-text-main-light dark:text-white mb-2">General Booking</h1>
+<p class="text-text-sub-light dark:text-text-sub-dark text-lg">Create a new appointment for any clinic location.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<div class="lg:col-span-8 flex flex-col gap-6">
+<section class="bg-surface-light dark:bg-surface-dark rounded-2xl border border-border-light dark:border-border-dark overflow-hidden p-6 shadow-sm">
+<h3 class="text-lg font-bold text-text-main-light dark:text-white mb-6 flex items-center gap-2">
+<span class="flex items-center justify-center size-8 rounded-full bg-primary/10 text-primary text-sm font-bold">1</span>
+                        Select Clinic Location
+                    </h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<label class="relative cursor-pointer group">
+<input class="peer sr-only" name="location" type="radio" value="baliwag"/>
+<div class="h-full flex flex-col rounded-xl border-2 border-border-light dark:border-border-dark peer-checked:border-primary peer-checked:bg-primary/5 hover:border-primary/50 transition-all overflow-hidden">
+<div class="h-28 w-full bg-gray-200 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC6Mcj5tMI_0U_1MhvmjtYZhlap-bhZm-CJHB7ymIysJ8Ta1GPnWAO81jgjpGOVK_Ja0zx4N85A6xfh6OTpmBm2OuOI3YUzop1BStDVdAr3B9Y_qGuNK0RsW50B3LKYe94rv-8a66e5jJEccS3WIiRnymSUs8BJs4mmltFstGcmR6qlP4L8Rqi3Iepko9-aJLS-Z1TZG7rItM-gMr9YECqkBHQnlouF5Fl6-NSYiH6gKr_d1vOb5B-7ECY0V6cypOqjO2011CrJJm2m');"></div>
+<div class="p-4 flex flex-col flex-1">
+<div class="flex items-center justify-between mb-1">
+<span class="font-bold text-text-main-light dark:text-white">Baliwag</span>
+<div class="size-5 rounded-full border border-gray-300 peer-checked:bg-primary peer-checked:border-primary flex items-center justify-center">
+<div class="size-2.5 rounded-full bg-white hidden peer-checked:block"></div>
+</div>
+</div>
+<span class="text-xs text-text-sub-light dark:text-text-sub-dark block">123 Main St, Bulacan</span>
+</div>
+</div>
+</label>
+<label class="relative cursor-pointer group">
+<input class="peer sr-only" name="location" type="radio" value="san-miguel"/>
+<div class="h-full flex flex-col rounded-xl border-2 border-border-light dark:border-border-dark peer-checked:border-primary peer-checked:bg-primary/5 hover:border-primary/50 transition-all overflow-hidden">
+<div class="h-28 w-full bg-gray-200 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC-IKSh43OvbC9s9Qtbx0-jC6CklRybm9CmYUkwH5-JvARNmY5T05wil-L8h6tZVYOTaUAAcF5xwQueISi9ryKImckjrOSeMv1iJM9h2uFO5iHLtMbQZAuATWDo6_JZvqT_PAbmidmOxstErZT5Hby-SvqeFoHcKKIJpcAG0BrE0GAA6pvihzzpRJylpJT1X0J8SFQPcIztoy7Wq5n58NzBQbPxNs1SKNLiIuTZQbx7R_rCXp604cFFw7dAeIIG9KVZCLVDBOFcBCMK');"></div>
+<div class="p-4 flex flex-col flex-1">
+<div class="flex items-center justify-between mb-1">
+<span class="font-bold text-text-main-light dark:text-white">San Miguel</span>
+<div class="size-5 rounded-full border border-gray-300 peer-checked:bg-primary peer-checked:border-primary flex items-center justify-center">
+<div class="size-2.5 rounded-full bg-white hidden peer-checked:block"></div>
+</div>
+</div>
+<span class="text-xs text-text-sub-light dark:text-text-sub-dark block">456 Center Rd</span>
+</div>
+</div>
+</label>
+<label class="relative cursor-pointer group">
+<input class="peer sr-only" name="location" type="radio" value="sta-maria"/>
+<div class="h-full flex flex-col rounded-xl border-2 border-border-light dark:border-border-dark peer-checked:border-primary peer-checked:bg-primary/5 hover:border-primary/50 transition-all overflow-hidden">
+<div class="h-28 w-full bg-gray-200 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDzQd6uKt31DEWtBma3lmkUQ-4ZvdMq6s6Uxlf0eJzAT22eDlpeI8o90Yg05ooWCTact0fb3uzfSbHaEohknR6EAFX2PkOgBaG468YLRBlC1quU_9M4afgVcq4osBx-JRnILKe6oNduhaWPX4jZjxa4XeYjyVYC4SXYSLvSOIJq3L9AFaHrFrL_GF6wxdAqYbZoUAHE8Eotuz2qvrDAyKME9hLRgHa_oAhltJjYHl5vuBXoDRPbr2YjYsUYY5osz3aiEFap2vS8f1eK');"></div>
+<div class="p-4 flex flex-col flex-1">
+<div class="flex items-center justify-between mb-1">
+<span class="font-bold text-text-main-light dark:text-white">Sta. Maria</span>
+<div class="size-5 rounded-full border border-gray-300 peer-checked:bg-primary peer-checked:border-primary flex items-center justify-center">
+<div class="size-2.5 rounded-full bg-white hidden peer-checked:block"></div>
+</div>
+</div>
+<span class="text-xs text-text-sub-light dark:text-text-sub-dark block">789 North Ave</span>
+</div>
+</div>
+</label>
+</div>
+</section>
+<section class="bg-surface-light dark:bg-surface-dark rounded-2xl border border-border-light dark:border-border-dark overflow-hidden p-6 shadow-sm">
+<h3 class="text-lg font-bold text-text-main-light dark:text-white mb-6 flex items-center gap-2">
+<span class="flex items-center justify-center size-8 rounded-full bg-primary/10 text-primary text-sm font-bold">2</span>
+                        Date &amp; Time
+                    </h3>
+<div class="flex flex-col md:flex-row gap-8">
+<div class="flex-1">
+<div class="bg-white dark:bg-surface-dark rounded-lg">
+<div class="flex items-center justify-between mb-4">
+<button class="p-1 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full text-text-sub-light">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<span class="font-bold text-text-main-light dark:text-white">October 2023</span>
+<button class="p-1 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full text-text-sub-light">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+<div class="grid grid-cols-7 gap-1 text-center mb-2">
+<span class="text-xs font-medium text-text-sub-light py-1">Su</span>
+<span class="text-xs font-medium text-text-sub-light py-1">Mo</span>
+<span class="text-xs font-medium text-text-sub-light py-1">Tu</span>
+<span class="text-xs font-medium text-text-sub-light py-1">We</span>
+<span class="text-xs font-medium text-text-sub-light py-1">Th</span>
+<span class="text-xs font-medium text-text-sub-light py-1">Fr</span>
+<span class="text-xs font-medium text-text-sub-light py-1">Sa</span>
+</div>
+<div class="grid grid-cols-7 gap-1 text-center text-sm">
+<button class="py-2 rounded-full text-gray-300 cursor-not-allowed">29</button>
+<button class="py-2 rounded-full text-gray-300 cursor-not-allowed">30</button>
+<button class="py-2 rounded-full hover:bg-primary/10 hover:text-primary text-text-main-light">1</button>
+<button class="py-2 rounded-full hover:bg-primary/10 hover:text-primary text-text-main-light">2</button>
+<button class="py-2 rounded-full hover:bg-primary/10 hover:text-primary text-text-main-light">3</button>
+<button class="py-2 rounded-full bg-primary text-white font-bold shadow-md">4</button>
+<button class="py-2 rounded-full hover:bg-primary/10 hover:text-primary text-text-main-light">5</button>
+<button class="py-2 rounded-full hover:bg-primary/10 hover:text-primary text-text-main-light">6</button>
+<button class="py-2 rounded-full hover:bg-primary/10 hover:text-primary text-text-main-light">7</button>
+<button class="py-2 rounded-full hover:bg-primary/10 hover:text-primary text-text-main-light">8</button>
+<button class="py-2 rounded-full hover:bg-primary/10 hover:text-primary text-text-main-light">9</button>
+<button class="py-2 rounded-full hover:bg-primary/10 hover:text-primary text-text-main-light">10</button>
+<button class="py-2 rounded-full hover:bg-primary/10 hover:text-primary text-text-main-light">11</button>
+<button class="py-2 rounded-full hover:bg-primary/10 hover:text-primary text-text-main-light">12</button>
+<button class="py-2 rounded-full hover:bg-primary/10 hover:text-primary text-text-main-light">13</button>
+<button class="py-2 rounded-full hover:bg-primary/10 hover:text-primary text-text-main-light">14</button>
+</div>
+</div>
+</div>
+<div class="flex-1 border-l border-border-light dark:border-border-dark pl-0 md:pl-8 pt-6 md:pt-0">
+<h4 class="font-semibold text-text-main-light dark:text-white mb-3 text-sm">Available Slots</h4>
+<div class="grid grid-cols-2 gap-2">
+<button class="py-2 px-3 rounded border border-border-light dark:border-border-dark text-sm hover:border-primary hover:text-primary transition-colors text-text-sub-light">09:00 AM</button>
+<button class="py-2 px-3 rounded border border-border-light dark:border-border-dark text-sm hover:border-primary hover:text-primary transition-colors text-text-sub-light">09:30 AM</button>
+<button class="py-2 px-3 rounded border border-primary bg-primary/5 text-primary text-sm font-medium ring-1 ring-primary">10:00 AM</button>
+<button class="py-2 px-3 rounded border border-border-light dark:border-border-dark text-sm hover:border-primary hover:text-primary transition-colors text-text-sub-light">10:30 AM</button>
+<button class="py-2 px-3 rounded border border-border-light dark:border-border-dark text-sm hover:border-primary hover:text-primary transition-colors text-text-sub-light">11:00 AM</button>
+<button class="py-2 px-3 rounded border border-border-light dark:border-border-dark text-sm hover:border-primary hover:text-primary transition-colors text-text-sub-light">11:30 AM</button>
+<button class="py-2 px-3 rounded border border-border-light dark:border-border-dark text-sm text-gray-300 cursor-not-allowed bg-gray-50 dark:bg-white/5">01:00 PM</button>
+<button class="py-2 px-3 rounded border border-border-light dark:border-border-dark text-sm hover:border-primary hover:text-primary transition-colors text-text-sub-light">01:30 PM</button>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div class="lg:col-span-4 flex flex-col gap-6">
+<div class="bg-surface-light dark:bg-surface-dark rounded-2xl border border-border-light dark:border-border-dark shadow-sm p-6 sticky top-24">
+<h3 class="text-lg font-bold text-text-main-light dark:text-white mb-6">Patient Details</h3>
+<form class="flex flex-col gap-4">
+<div>
+<label class="block text-sm font-medium text-text-sub-light dark:text-text-sub-dark mb-1">First Name</label>
+<input class="w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark text-text-main-light dark:text-white focus:ring-primary focus:border-primary text-sm" placeholder="Enter first name" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-text-sub-light dark:text-text-sub-dark mb-1">Last Name</label>
+<input class="w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark text-text-main-light dark:text-white focus:ring-primary focus:border-primary text-sm" placeholder="Enter last name" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-text-sub-light dark:text-text-sub-dark mb-1">Phone Number</label>
+<input class="w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark text-text-main-light dark:text-white focus:ring-primary focus:border-primary text-sm" placeholder="(+63) 900-000-0000" type="tel"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-text-sub-light dark:text-text-sub-dark mb-1">Email Address</label>
+<input class="w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark text-text-main-light dark:text-white focus:ring-primary focus:border-primary text-sm" placeholder="patient@example.com" type="email"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-text-sub-light dark:text-text-sub-dark mb-1">Service Type</label>
+<select class="w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark text-text-main-light dark:text-white focus:ring-primary focus:border-primary text-sm">
+<option>General Checkup</option>
+<option>Cleaning</option>
+<option>Extraction</option>
+<option>Consultation</option>
+</select>
+</div>
+<div>
+<label class="block text-sm font-medium text-text-sub-light dark:text-text-sub-dark mb-1">Notes (Optional)</label>
+<textarea class="w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark text-text-main-light dark:text-white focus:ring-primary focus:border-primary text-sm" rows="3"></textarea>
+</div>
+<div class="h-px bg-border-light dark:bg-border-dark my-2"></div>
+<div class="flex justify-between items-center text-sm font-medium mb-4">
+<span class="text-text-sub-light">Selected:</span>
+<span class="text-primary font-bold">Baliwag, Oct 4, 10:00 AM</span>
+</div>
+<button class="w-full py-3 rounded-lg bg-primary hover:bg-primary-dark text-white font-bold transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2" type="button">
+                            Confirm Booking
+                        </button>
+</form>
+</div>
+</div>
+</div>
+</main>
+<footer class="mt-auto border-t border-border-light dark:border-border-dark bg-white dark:bg-surface-dark py-8">
+<div class="max-w-[1440px] mx-auto px-4 md:px-10 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-text-sub-light dark:text-text-sub-dark text-sm">© 2023 Ivy Dental Clinic. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="text-text-sub-light dark:text-text-sub-dark hover:text-primary text-sm" href="#">Privacy Policy</a>
+<a class="text-text-sub-light dark:text-text-sub-dark hover:text-primary text-sm" href="#">Terms of Service</a>
+<a class="text-text-sub-light dark:text-text-sub-dark hover:text-primary text-sm" href="#">Help Center</a>
+</div>
+</div>
+</footer>
+</body></html>

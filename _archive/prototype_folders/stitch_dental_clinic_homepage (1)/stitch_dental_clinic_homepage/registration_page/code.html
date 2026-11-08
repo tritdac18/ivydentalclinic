@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Patient Registration - Dental Care Clinic</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#136dec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        /* Custom scrollbar for form section if needed */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #e2e8f0;
+            border-radius: 20px;
+        }
+        .dark .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #334155;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#0d131b] dark:text-white h-screen overflow-hidden flex flex-col font-display">
+<div class="flex flex-1 h-full w-full">
+<!-- Left Section: Hero/Branding (Hidden on Mobile) -->
+<div class="hidden lg:flex lg:w-[45%] xl:w-[50%] relative bg-blue-600 overflow-hidden">
+<!-- Background Image -->
+<img alt="Dental Clinic Interior" class="absolute inset-0 h-full w-full object-cover mix-blend-overlay opacity-50" data-alt="Clean and modern dental clinic reception area with soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFu41GrkM5xj6g7_fcvaurtCUCojdaRP9JiiZIX1nYUI9yfI3xxMDwqJfdkbBpFdO1UoaM-yMQZp1mrm2HrjpQOylBSw51owerIVXdMPWjg8_lNn4s7XAkRyqQR-y4HKJsbn3g9ACanCD2qGQltxY91cA8riad5wkuWU3YD-PMkAZThiIkIjNMWboWplWMdD32YNMFBKJBR4dIRlyPG2ure1r5PDvw9dsehjLtphsRYpL6AfbB6ZQiJMQp92tosevwiZJtmnbkz1qD"/>
+<div class="absolute inset-0 bg-gradient-to-br from-primary/90 to-blue-900/90 mix-blend-multiply"></div>
+<!-- Content Overlay -->
+<div class="relative z-10 flex flex-col justify-between p-16 h-full text-white">
+<div>
+<!-- Logo on dark background -->
+<div class="flex items-center gap-3 mb-12">
+<div class="size-10 bg-white rounded-lg flex items-center justify-center text-primary shadow-lg">
+<svg class="w-6 h-6" fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M44 11.2727C44 14.0109 39.8386 16.3957 33.69 17.6364C39.8386 18.877 44 21.2618 44 24C44 26.7382 39.8386 29.123 33.69 30.3636C39.8386 31.6043 44 33.9891 44 36.7273C44 40.7439 35.0457 44 24 44C12.9543 44 4 40.7439 4 36.7273C4 33.9891 8.16144 31.6043 14.31 30.3636C8.16144 29.123 4 26.7382 4 24C4 21.2618 8.16144 18.877 14.31 17.6364C8.16144 16.3957 4 14.0109 4 11.2727C4 7.25611 12.9543 4 24 4C35.0457 4 44 7.25611 44 11.2727Z"></path>
+</svg>
+</div>
+<span class="text-2xl font-bold tracking-tight">Dental Care Clinic</span>
+</div>
+<h2 class="text-4xl md:text-5xl font-bold leading-tight mb-6">Start your journey to a perfect smile.</h2>
+<p class="text-blue-100 text-lg max-w-md leading-relaxed">Join over 15,000 patients who trust us with their dental health. Comprehensive care for the whole family.</p>
+</div>
+<!-- Testimonial / Social Proof -->
+<div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/10">
+<div class="flex items-center gap-1 text-yellow-400 mb-3">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="text-white text-sm font-medium ml-2">5.0 from 200+ reviews</span>
+</div>
+<p class="text-white/90 italic">"The registration process was seamless, and the staff made me feel comfortable immediately. Highly recommended!"</p>
+<div class="flex items-center gap-3 mt-4">
+<img alt="User" class="w-8 h-8 rounded-full object-cover border-2 border-white/50" data-alt="Portrait of Sarah Jenkins" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWAcCQP0ePoWdQMvHC-tbgjc7QyXJ5f_TveAPbXb2Ncjv9XjPskeeB_uFJqdG9CUPS31feoMGN5Z3Up8v93w8UKsfgcVpWlyXCOOWBmn4QW6i1z6Xe6ncFwdcrVNKPj5W4KN6BYnRHRC22TXd9DQHewlu-oZaVVjF5o62luXRoC9ry5AShMC_LMlyBP_rXNTYOMOexaN2hfFcjPChTwLZw0GEOL0YLj4e7DlO44oLsVtVDkgM27z5P_RSUxHhEL73BuSX9lpjV1GK6"/>
+<span class="text-sm font-medium">Sarah Jenkins, Patient</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Section: Form -->
+<div class="flex-1 flex flex-col h-full bg-background-light dark:bg-background-dark relative">
+<!-- Mobile Header -->
+<header class="lg:hidden flex items-center justify-between px-6 py-4 bg-white dark:bg-[#1a2634] border-b border-gray-200 dark:border-gray-800 shrink-0">
+<div class="flex items-center gap-2 text-primary">
+<div class="size-6">
+<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M44 11.2727C44 14.0109 39.8386 16.3957 33.69 17.6364C39.8386 18.877 44 21.2618 44 24C44 26.7382 39.8386 29.123 33.69 30.3636C39.8386 31.6043 44 33.9891 44 36.7273C44 40.7439 35.0457 44 24 44C12.9543 44 4 40.7439 4 36.7273C4 33.9891 8.16144 31.6043 14.31 30.3636C8.16144 29.123 4 26.7382 4 24C4 21.2618 8.16144 18.877 14.31 17.6364C8.16144 16.3957 4 14.0109 4 11.2727C4 7.25611 12.9543 4 24 4C35.0457 4 44 7.25611 44 11.2727Z"></path>
+</svg>
+</div>
+<span class="text-lg font-bold text-gray-900 dark:text-white">Dental Care</span>
+</div>
+</header>
+<!-- Desktop Header/Nav inside right panel -->
+<div class="hidden lg:flex justify-end items-center p-8 absolute top-0 right-0 z-20 w-full">
+<div class="flex items-center gap-6">
+<span class="text-sm text-gray-500 dark:text-gray-400">Already a patient?</span>
+<a class="text-primary bg-primary/10 hover:bg-primary/20 px-4 py-2 rounded-lg text-sm font-bold transition-colors" href="#">
+                        Log In
+                    </a>
+</div>
+</div>
+<!-- Scrollable Form Container -->
+<div class="flex-1 overflow-y-auto custom-scrollbar p-6 md:p-12 lg:p-16 flex flex-col items-center justify-center">
+<div class="w-full max-w-[520px] mx-auto space-y-8">
+<!-- Form Heading -->
+<div class="text-center lg:text-left">
+<h1 class="text-3xl font-black tracking-tight text-[#0d131b] dark:text-white mb-3">Patient Registration</h1>
+<p class="text-[#4c6c9a] dark:text-gray-400 text-base">Please enter your details below to create a new patient account.</p>
+</div>
+<!-- Main Form -->
+<form class="space-y-6">
+<!-- Name Fields -->
+<div class="flex flex-col md:flex-row gap-5">
+<label class="flex-1">
+<span class="block text-sm font-semibold text-[#0d131b] dark:text-gray-200 mb-2">First Name</span>
+<input class="w-full rounded-lg border border-[#cfd9e7] bg-white dark:bg-[#1a2634] dark:border-gray-700 text-[#0d131b] dark:text-white placeholder:text-[#4c6c9a] focus:ring-2 focus:ring-primary/20 focus:border-primary h-12 px-4 transition-all" placeholder="Jane" type="text"/>
+</label>
+<label class="flex-1">
+<span class="block text-sm font-semibold text-[#0d131b] dark:text-gray-200 mb-2">Last Name</span>
+<input class="w-full rounded-lg border border-[#cfd9e7] bg-white dark:bg-[#1a2634] dark:border-gray-700 text-[#0d131b] dark:text-white placeholder:text-[#4c6c9a] focus:ring-2 focus:ring-primary/20 focus:border-primary h-12 px-4 transition-all" placeholder="Doe" type="text"/>
+</label>
+</div>
+<!-- Date & Phone -->
+<div class="flex flex-col md:flex-row gap-5">
+<label class="flex-1 relative">
+<span class="block text-sm font-semibold text-[#0d131b] dark:text-gray-200 mb-2">Date of Birth</span>
+<div class="relative">
+<input class="w-full rounded-lg border border-[#cfd9e7] bg-white dark:bg-[#1a2634] dark:border-gray-700 text-[#0d131b] dark:text-white placeholder:text-[#4c6c9a] focus:ring-2 focus:ring-primary/20 focus:border-primary h-12 px-4 pr-10 transition-all" placeholder="MM/DD/YYYY" type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-[#4c6c9a] text-[20px] pointer-events-none">calendar_today</span>
+</div>
+</label>
+<label class="flex-1">
+<span class="block text-sm font-semibold text-[#0d131b] dark:text-gray-200 mb-2">Phone Number</span>
+<input class="w-full rounded-lg border border-[#cfd9e7] bg-white dark:bg-[#1a2634] dark:border-gray-700 text-[#0d131b] dark:text-white placeholder:text-[#4c6c9a] focus:ring-2 focus:ring-primary/20 focus:border-primary h-12 px-4 transition-all" placeholder="(555) 123-4567" type="tel"/>
+</label>
+</div>
+<!-- Email -->
+<label class="block">
+<span class="block text-sm font-semibold text-[#0d131b] dark:text-gray-200 mb-2">Email Address</span>
+<div class="relative">
+<input class="w-full rounded-lg border border-[#cfd9e7] bg-white dark:bg-[#1a2634] dark:border-gray-700 text-[#0d131b] dark:text-white placeholder:text-[#4c6c9a] focus:ring-2 focus:ring-primary/20 focus:border-primary h-12 px-4 pr-10 transition-all" placeholder="jane@example.com" type="email"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-[#4c6c9a] text-[20px] pointer-events-none">mail</span>
+</div>
+</label>
+<!-- Password Fields -->
+<div class="flex flex-col md:flex-row gap-5">
+<label class="flex-1 relative">
+<span class="block text-sm font-semibold text-[#0d131b] dark:text-gray-200 mb-2">Password</span>
+<div class="relative">
+<input class="w-full rounded-lg border border-[#cfd9e7] bg-white dark:bg-[#1a2634] dark:border-gray-700 text-[#0d131b] dark:text-white placeholder:text-[#4c6c9a] focus:ring-2 focus:ring-primary/20 focus:border-primary h-12 px-4 pr-10 transition-all" placeholder="Create password" type="password"/>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 text-[#4c6c9a] hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility_off</span>
+</button>
+</div>
+</label>
+<label class="flex-1 relative">
+<span class="block text-sm font-semibold text-[#0d131b] dark:text-gray-200 mb-2">Confirm Password</span>
+<div class="relative">
+<input class="w-full rounded-lg border border-[#cfd9e7] bg-white dark:bg-[#1a2634] dark:border-gray-700 text-[#0d131b] dark:text-white placeholder:text-[#4c6c9a] focus:ring-2 focus:ring-primary/20 focus:border-primary h-12 px-4 pr-10 transition-all" placeholder="Confirm password" type="password"/>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 text-[#4c6c9a] hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility_off</span>
+</button>
+</div>
+</label>
+</div>
+<!-- Checkbox -->
+<div class="flex items-start gap-3 pt-2">
+<div class="flex h-6 items-center">
+<input class="h-5 w-5 rounded border-gray-300 text-primary focus:ring-primary dark:border-gray-600 dark:bg-[#1a2634]" id="terms" name="terms" type="checkbox"/>
+</div>
+<div class="text-sm leading-tight">
+<label class="font-medium text-gray-500 dark:text-gray-400" for="terms">By creating an account, you agree to our <a class="text-primary hover:text-blue-700" href="#">Terms of Service</a> and <a class="text-primary hover:text-blue-700" href="#">Privacy Policy</a>.</label>
+</div>
+</div>
+<!-- Actions -->
+<div class="pt-4 space-y-4">
+<button class="group relative w-full flex justify-center py-3.5 px-4 border border-transparent text-sm font-bold rounded-lg text-white bg-primary hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors shadow-lg shadow-blue-500/30" type="button">
+                                Create Account
+                                <span class="material-symbols-outlined absolute right-4 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<!-- Divider -->
+<div class="relative flex py-2 items-center">
+<div class="flex-grow border-t border-gray-200 dark:border-gray-700"></div>
+<span class="flex-shrink-0 mx-4 text-gray-400 text-xs uppercase tracking-wider font-medium">Or continue with</span>
+<div class="flex-grow border-t border-gray-200 dark:border-gray-700"></div>
+</div>
+<!-- Social Buttons -->
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-2 w-full rounded-lg border border-[#cfd9e7] dark:border-gray-700 bg-white dark:bg-[#1a2634] py-2.5 px-4 text-sm font-semibold text-[#0d131b] dark:text-white shadow-sm hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors" type="button">
+<svg aria-hidden="true" class="h-5 w-5" viewbox="0 0 24 24">
+<path d="M12.0003 20.45c4.6667 0 7.8463-3.2355 7.8463-8.0064 0-.6714-.0709-1.3255-.1814-1.9567h-7.6649v3.6888h4.4088c-.2071 1.2505-1.07 2.6586-2.5026 3.4914l-.0226.1517 2.4571 1.9022.1703.017c2.469-2.2743 3.894-5.6206 3.894-9.2513C20.4063 4.7777 16.6433 1.5 12.0003 1.5c-3.1683 0-5.8344 1.8021-7.1352 4.4168l-.1352-.0114-2.5691 1.9922-.034.1293c1.3396 3.9977 5.0935 6.8731 9.5397 6.8731z" fill="#4285F4" fill-rule="evenodd"></path>
+<path d="M3.2952 10.4168C2.9559 9.3986 2.7681 8.3182 2.7681 7.2001c0-1.1578.2045-2.2742.5676-3.3262l-2.603-2.0152C.2525 3.8687 0 5.4983 0 7.2001c0 1.7455.2652 3.4143.7482 4.977l2.547-1.7603z" fill="#FBBC05" fill-rule="evenodd"></path>
+<path d="M12.0003 3.1977c2.2798 0 4.3168.7842 5.9222 2.316l2.7484-2.7484C18.9959 1.1442 15.7709 0 12.0003 0 7.554 0 3.8001 2.8754 2.4606 6.8731l2.603 2.0152c1.3008-2.6146 3.9669-4.4167 7.1352-4.4167z" fill="#EA4335" fill-rule="evenodd"></path>
+<path d="M7.1352 15.9186c-3.1683 0-5.8344-1.8022-7.1352-4.4168l-2.547 1.7603C1.8389 17.26 5.5928 20.1354 10.039 20.1354l2.4797-1.9192-2.3129-1.8023c-.645.4267-1.4678.6953-2.4087.6953z" fill="#34A853" fill-rule="evenodd"></path>
+</svg>
+                                    Google
+                                </button>
+<button class="flex items-center justify-center gap-2 w-full rounded-lg border border-[#cfd9e7] dark:border-gray-700 bg-white dark:bg-[#1a2634] py-2.5 px-4 text-sm font-semibold text-[#0d131b] dark:text-white shadow-sm hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors" type="button">
+<svg class="h-5 w-5 text-gray-900 dark:text-white" fill="currentColor" viewbox="0 0 24 24">
+<path d="M16.365 1.43c0 1.14-.493 2.27-1.177 3.08-.744.9-1.99 1.57-2.987 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.29 0-1.38.745-2.87 1.87-4.16.62-.72 1.66-1.21 2.51-1.21.03 0 .09.02.124.03zm3.76 17.29c-.69 2.05-1.74 4.12-3.13 4.12-.66 0-1.15-.46-1.93-.46-.78 0-1.29.47-1.97.47-1.35 0-2.48-2.26-3.37-4.54-1.68-4.22.42-7.85 3.32-7.85.95 0 1.73.57 2.28.57.54 0 1.43-.59 2.45-.59 1.66 0 2.92 1.05 3.53 1.94-3.11 1.6-2.58 6.47.82 7.73v.01zM11.97 7.02c-.11 0-.27-.01-.4-.01-4.04 0-6.17 3.55-6.17 7.42 0 3.75 2.15 7.4 6.18 7.4.1 0 .22 0 .34-.01 1.83 0 3.32-1.66 3.32-3.7 0-2.03-1.48-3.7-3.27-3.7z"></path>
+</svg>
+                                    Apple
+                                </button>
+</div>
+</div>
+<!-- Mobile Footer Login Link -->
+<div class="mt-6 text-center lg:hidden">
+<p class="text-sm text-gray-600 dark:text-gray-400">
+                                Already have an account? 
+                                <a class="font-bold text-primary hover:underline" href="#">Log in here</a>
+</p>
+</div>
+</form>
+<!-- Footer -->
+<div class="pt-8 text-center border-t border-gray-100 dark:border-gray-800">
+<p class="text-xs text-gray-400">
+                            © 2024 Dental Care Clinic. All rights reserved. <br/>
+<a class="hover:text-primary" href="#">HIPAA Compliant</a> • <a class="hover:text-primary" href="#">Secure Connection</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

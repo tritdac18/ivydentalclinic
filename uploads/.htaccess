@@ -1,0 +1,5 @@
+# Deny direct access to uploaded files
+# Files should be accessed through download_patient_file.php for security
+Order Deny,Allow
+Deny from all
+

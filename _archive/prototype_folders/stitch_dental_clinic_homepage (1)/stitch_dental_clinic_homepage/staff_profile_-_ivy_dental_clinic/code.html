@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Staff Profile - Ivy Dental Clinic</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#136dec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1e293b",
+                        "border-light": "#e2e8f0",
+                        "border-dark": "#334155",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased overflow-x-hidden">
+<div class="flex h-screen w-full overflow-hidden">
+<aside class="w-64 flex-shrink-0 border-r border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark flex flex-col justify-between overflow-y-auto">
+<div class="flex flex-col gap-6 p-4">
+<div class="flex items-center gap-3 px-2">
+<div class="bg-center bg-no-repeat bg-cover rounded-xl h-10 w-10 bg-primary/10 flex items-center justify-center text-primary" data-alt="Ivy Dental Clinic Logo">
+<span class="material-symbols-outlined text-[24px]">dentistry</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-slate-900 dark:text-white text-base font-semibold leading-tight">Ivy Dental</h1>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-normal">Clinic Admin</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors">calendar_month</span>
+<span class="text-sm font-medium">Appointments</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors">group</span>
+<span class="text-sm font-medium">Patients</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary dark:text-blue-400 font-medium" href="#">
+<span class="material-symbols-outlined text-[20px] fill-1">badge</span>
+<span class="text-sm">Staff</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</nav>
+</div>
+<div class="p-4 border-t border-border-light dark:border-border-dark">
+<button class="flex w-full items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:text-red-600 dark:hover:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/10 transition-colors">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+<span class="text-sm font-medium">Log Out</span>
+</button>
+</div>
+</aside>
+<main class="flex-1 flex flex-col h-full relative overflow-y-auto">
+<header class="sticky top-0 z-20 w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-border-light dark:border-border-dark px-6 py-4 flex items-center justify-between">
+<div class="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+<a class="hover:text-primary transition-colors" href="#">Home</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Staff</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-slate-900 dark:text-slate-100 font-medium">Dr. Sarah Jenkins</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="h-8 w-8 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden cursor-pointer border border-slate-300 dark:border-slate-600" data-alt="Logged in admin avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBjBI11YIG5ZRCUN93673msfYWncn6c-UuvdHMMB9xX5iozbOev8bmhr5UhV30DUCx98HT1pp9iceKXQeWsIc0bB1_97z84umKVlkw5AX6bP8Ij5C1U3MyZkL4k-tVvcfIRJvJYPHD5j5xQAFHOx9ZISf8f4aZhw7vCDgRqVz9g9AJ209FzvsoiO2fIxAdCSMOVq0uVUVaJObCooa5fl9KyVF-pRBIC-ax6wqheoG7PjiDRGyupP-pyzPH_xpXyMvk9sSE8gP1ZWNDI"); background-size: cover;'></div>
+</div>
+</header>
+<div class="flex-1 w-full max-w-[1200px] mx-auto p-6 md:p-8 flex flex-col gap-6">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h1 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white tracking-tight">Staff Profile</h1>
+<p class="text-slate-500 dark:text-slate-400 mt-1">Manage personal details, roles, and account settings.</p>
+</div>
+<div class="flex gap-3">
+<button class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-primary text-white text-sm font-medium hover:bg-blue-600 transition-colors shadow-sm shadow-blue-500/20">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+                        Edit Profile
+                    </button>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-border-light dark:border-border-dark p-6 md:p-8">
+<div class="flex flex-col md:flex-row gap-6 items-center md:items-start">
+<div class="relative shrink-0">
+<div class="h-32 w-32 rounded-full border-4 border-white dark:border-slate-700 shadow-md bg-cover bg-center" data-alt="Profile picture of Dr. Sarah Jenkins" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuChOMp9LEhMNEmd9S40eOYdayhBp8YqtHJAkPj9hedBAE6au4aX3wv2P6altjjp6tO1luU3ZvNE2xQLL2NjC0HjjxVEY4qaYedsCAr7pFKPMV26zEl5nAGd9nSoDYs_CnSbckWrwrOnyblTETkm1IRfHMems0dUmq2ABBTrlkufvlHIInKd4kgCyY_SnsjSmbWa2AF_-Tk8ep3Mb51V0q_Z_rJnEp8dN_V-lQtAB3WoXfL5diRq_48SrpvAChbKlkPhj7gL9C8OXSWP");'></div>
+<div class="absolute bottom-1 right-1 h-6 w-6 bg-green-500 border-2 border-white dark:border-surface-dark rounded-full" title="Active Status"></div>
+</div>
+<div class="flex flex-col items-center md:items-start flex-1 gap-2 pt-2 text-center md:text-left">
+<div>
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white">Dr. Sarah Jenkins</h2>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Member since November 2019</p>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<div class="lg:col-span-2 flex flex-col gap-6">
+<section class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-border-light dark:border-border-dark overflow-hidden">
+<div class="px-6 py-4 border-b border-border-light dark:border-border-dark flex justify-between items-center">
+<h3 class="font-semibold text-slate-900 dark:text-white">Personal Information</h3>
+</div>
+<div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-8">
+<div class="flex flex-col gap-1.5">
+<label class="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase">First Name</label>
+<div class="text-sm font-medium text-slate-900 dark:text-slate-200">Sarah</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase">Last Name</label>
+<div class="text-sm font-medium text-slate-900 dark:text-slate-200">Jenkins</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase">Role</label>
+<div class="text-sm font-medium text-slate-900 dark:text-slate-200">Senior Dentist</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase">License Number</label>
+<div class="flex items-center gap-2">
+<span class="text-sm font-medium text-slate-900 dark:text-slate-200">DEN-88392-NY</span>
+<span class="material-symbols-outlined text-[16px] text-green-600 dark:text-green-400" title="Verified License">verified</span>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-border-light dark:border-border-dark overflow-hidden">
+<div class="px-6 py-4 border-b border-border-light dark:border-border-dark flex justify-between items-center">
+<h3 class="font-semibold text-slate-900 dark:text-white">Employment Details</h3>
+</div>
+<div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-8">
+<div class="flex flex-col gap-1.5">
+<label class="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase">Staff ID</label>
+<div class="flex items-center gap-2">
+<div class="text-sm font-mono bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded text-slate-700 dark:text-slate-300">#STF-2024-001</div>
+<button class="text-slate-400 hover:text-primary transition-colors" title="Copy ID">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase">Branch ID</label>
+<div class="text-sm font-medium text-slate-900 dark:text-slate-200">BR-05</div>
+</div>
+</div>
+</section>
+</div>
+<div class="flex flex-col gap-6">
+<section class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-border-light dark:border-border-dark overflow-hidden">
+<div class="px-6 py-4 border-b border-border-light dark:border-border-dark">
+<h3 class="font-semibold text-slate-900 dark:text-white">Contact Info</h3>
+</div>
+<div class="p-6 flex flex-col gap-5">
+<div class="flex items-start gap-4">
+<div class="p-2 rounded-lg bg-blue-50 dark:bg-blue-900/20 text-primary shrink-0">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase">Email Address</span>
+<span class="text-sm font-medium text-slate-900 dark:text-slate-200 truncate">s.jenkins@ivydental.com</span>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="p-2 rounded-lg bg-blue-50 dark:bg-blue-900/20 text-primary shrink-0">
+<span class="material-symbols-outlined text-[20px]">call</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase">Phone Number</span>
+<span class="text-sm font-medium text-slate-900 dark:text-slate-200">+1 (555) 012-3456</span>
+</div>
+</div>
+</div>
+<div class="bg-slate-50 dark:bg-slate-800/50 px-6 py-3 border-t border-border-light dark:border-border-dark">
+<button class="text-sm text-primary font-medium hover:underline flex items-center gap-1">
+                                Update Contact Info
+                                <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</section>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

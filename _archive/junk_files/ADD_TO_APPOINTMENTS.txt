@@ -1,0 +1,57 @@
+<!-- Add this button near line 628 in appointments.php, after the "New Booking" button -->
+
+<?php
+// Check if patient has pending PayMongo payments
+$has_pending_payments = false;
+if ($user_type === 'patient') {
+    $check_stmt = $conn->prepare("
+        SELECT COUNT(*) as pending_count
+        FROM tbl_payments 
+        WHERE patient_id = ?
+        AND transaction_id LIKE 'PM-LINK-%'
+        AND payment_status = 'Pending'
+    ");
+    $check_stmt->bind_param("i", $user_info['patient_id']);
+    $check_stmt->execute();
+    $check_result = $check_stmt->get_result();
+    if ($check_result->num_rows > 0) {
+        $check_row = $check_result->fetch_assoc();
+        $has_pending_payments = $check_row['pending_count'] > 0;
+    }
+    $check_stmt->close();
+}
+?>
+
+<?php if ($has_pending_payments): ?>
+<button id="verifyPaymentsBtn" onclick="verifyMyPayments()" class="cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-4 bg-primary hover:bg-primary-dark transition-colors text-white text-base font-bold tracking-[0.015em] shadow-md flex whitespace-nowrap">
+    <span class="material-symbols-outlined mr-2">check_circle</span>
+    <span>Verify My Payments</span>
+</button>
+<?php endif; ?>
+
+<script>
+function verifyMyPayments() {
+    const btn = document.getElementById('verifyPaymentsBtn');
+    const originalHTML = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '<span class="material-symbols-outlined mr-2 animate-spin">progress_activity</span><span>Verifying...</span>';
+    
+    fetch('verify_my_payments.php')
+        .then(response => response.json())
+        .then(data => {
+            if (data.success && data.verified > 0) {
+                alert('✅ ' + data.message + '\n\nYour page will refresh to show updated appointments.');
+                window.location.reload();
+            } else {
+                alert(data.message);
+                btn.disabled = false;
+                btn.innerHTML = originalHTML;
+            }
+        })
+        .catch(error => {
+            alert('Error verifying payments. Please try again.');
+            btn.disabled = false;
+            btn.innerHTML = originalHTML;
+        });
+}
+</script>
