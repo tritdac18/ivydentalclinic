@@ -1,7 +1,8 @@
-# API Credentials (NEVER COMMIT THESE!)
-config/credentials.json
-config/gmail_token.json
-config/paymongo_keys.php
+# Config folder - contains sensitive credentials (NEVER COMMIT!)
+config/
+
+# Example/template files ARE safe to commit
+!config/*.example.php
 
 # Composer
 vendor/
